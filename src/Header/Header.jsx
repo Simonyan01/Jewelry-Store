@@ -19,7 +19,7 @@ export const Header = () => {
                 </div>
                 {models.map((model) => (
                     <div key={model.id} className="model-example">
-                        <img src={model.src} alt="jewelry" /><br />
+                        <img src={model.img} alt="jewelry" /><br />
                         {model.name}
                     </div>
                 ))}

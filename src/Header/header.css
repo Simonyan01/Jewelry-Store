@@ -5,6 +5,8 @@
   background: white;
   width: 75%;
   padding: 11px 0;
+  position: relative;
+  left: 100px;
   margin: 2vw 0 1vw 17vw;
 }
 
@@ -47,7 +49,7 @@
 .search-icon {
   position: relative;
   right: 30px;
-  background: #0008c1;
+  background: #3264fe;
   padding: 5px;
   border-radius: 50%;
   color: #ffffff;
@@ -57,14 +59,16 @@
 
 .search-icon:hover {
   background: #ffffff;
-  color: #0008c1;
+  color: #3264fe;
 }
 
 .models {
   display: flex;
   gap: 23px;
-  margin-left: 21vw;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  right: 50px;
 }
 
 .gender img {
@@ -88,6 +92,8 @@
   background: #ffffff;
   padding: 4px 30px;
   border-radius: 5px;
+  text-align: center;
+ 
 }
 
 .plus {

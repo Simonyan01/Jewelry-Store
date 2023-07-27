@@ -4,20 +4,27 @@ import "./filter.css"
 
 
 export const Filter = () => {
-    const min = 0, max = 10000
-    const [value, setValue] = useState([min, max]);
+    const values = {
+        min: 0,
+        max: 10000,
+        min2: 0,
+        max2: 10000,
 
+    }
+    const [value, setValue] = useState([values.min, values.max]);
+    const [secondVal, setSecondVal] = useState([values.min2, values.max2]);
     const handleChange = (val) => setValue(val);
+    const secondHandleChange = (val) => setSecondVal(val);
 
     return (
         <div className="filter-container">
-            <h2>Цена</h2>
+            <h4>Цена</h4>
             <Slider
                 className='slider'
-                defaultValue={[min, max]}
+                defaultValue={[values.min, values.max]}
                 minDistance={1000}
-                min={min}
-                max={max}
+                min={values.min}
+                max={values.max}
                 step={50}
                 value={value}
                 pearling={true}
@@ -43,17 +50,17 @@ export const Filter = () => {
                     />
                 </div>
             </div>
-            <h2>Цена производства</h2>
+            <h4>Цена производства</h4>
             <Slider
                 className='slider'
-                defaultValue={[min, max]}
+                defaultValue={[values.min2, values.max2]}
                 minDistance={1000}
-                min={min}
-                max={max}
+                min={values.min2}
+                max={values.max2}
                 step={50}
-                value={value}
+                value={secondVal}
                 pearling={true}
-                onChange={handleChange}
+                onChange={secondHandleChange}
             />
             <div className='view'>
                 <div className='field'>
@@ -61,8 +68,8 @@ export const Filter = () => {
                     <input
                         type="number"
                         className="minPrice"
-                        value={value[0]}
-                        onChange={(e) => handleChange([+e.target.value])}
+                        value={secondVal[0]}
+                        onChange={(e) => secondHandleChange(+e.target.value)}
                     />
                 </div>
                 <div className='field'>
@@ -70,11 +77,12 @@ export const Filter = () => {
                     <input
                         type="number"
                         className="maxPrice"
-                        value={value[1]}
-                        onChange={(e) => handleChange([+e.target.value])}
+                        value={secondVal[1]}
+                        onChange={(e) => secondHandleChange(+e.target.value)}
                     />
                 </div>
             </div>
+            <button className='saveButton' >Сохранить</button>
         </div>
     )
 }

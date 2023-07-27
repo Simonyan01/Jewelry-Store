@@ -1,11 +1,16 @@
 import { Header } from "./Header/Header";
 import { Filter } from "./Filter/Filter";
+import { Item } from "./Jewelries/Item";
+import "./index.css";
 
 function App() {
   return (
     <>
       <Header />
-      <Filter />
+      <section>
+        <Filter />
+        <Item />
+      </section>
     </>
   );
 }
