@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import Slider from 'react-slider'
-import "./filter.css"
-
+import { useState } from "react";
+import Slider from "react-slider";
+import "./filter.css";
 
 export const Filter = () => {
   const values = {
