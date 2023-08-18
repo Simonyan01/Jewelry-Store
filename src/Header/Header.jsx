@@ -18,10 +18,10 @@ export const Header = () => {
                     <img src={men} alt="men" />
                 </div>
                 {models.map((model) => (
-                    <div key={model.id} className="model-example">
+                    <button key={model.id} className="model-example">
                         <img src={model.img} alt="jewelry" /><br />
                         {model.name}
-                    </div>
+                    </button>
                 ))}
                 <button className="plus">
                     <FontAwesomeIcon icon={faPlus} />
