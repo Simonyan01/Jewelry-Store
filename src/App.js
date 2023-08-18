@@ -1,7 +1,7 @@
 import { Header } from "./Header/Header";
 import { Filter } from "./Filter/Filter";
 import { Item } from "./Jewelries/Item";
-import "./index.css";
+import "./App.css";
 
 function App() {
   return (
