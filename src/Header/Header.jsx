@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { models } from "./models";
-import men from "../Icons/men.png";
-import women from "../Icons/women.png";
+import { icons } from "../icons"
 import "./header.css"
 
 export const Header = () => {
@@ -14,8 +13,8 @@ export const Header = () => {
             </header>
             <section className="models">
                 <div className="gender">
-                    <img src={women} alt="women" />
-                    <img src={men} alt="men" />
+                    <img src={icons.women} alt="women" />
+                    <img src={icons.men} alt="men" />
                 </div>
                 {models.map((model) => (
                     <button key={model.id} className="model-example">

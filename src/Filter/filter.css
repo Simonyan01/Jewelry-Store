@@ -1,11 +1,12 @@
 .filter-section {
   position: relative;
   bottom: 20rem;
-  left: 1rem;
-  width: 90%;
+  left: 0.5rem;
+  width: 100%;
 }
 
 .filter-container {
+  width: min(100%, 280px);
   background: var(--white);
   border-radius: 10px;
   padding: 20px;
@@ -20,7 +21,7 @@
 }
 
 .field {
-  line-height: 60px;
+  line-height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -43,7 +44,7 @@ input::-webkit-inner-spin-button {
 
 .slider {
   position: relative;
-  top: 15px;
+  top: 1rem;
   height: 10px;
   width: 100%;
   background-color: var(--main-color);
@@ -83,23 +84,23 @@ input::-webkit-inner-spin-button {
 }
 
 .filter-button {
-  position: relative;
-  left: 6%;
+  position: fixed;
+  left: 19%;
+  top: 40%;
   height: 170px;
-  color: var(--white);
   background: var(--main-color);
   border-radius: 0px 10px 10px 0px;
-  text-align: center;
-  padding: 10px;
+  padding: 9px;
   inline-size: min-content;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .filter-button .filter-arrow {
   position: relative;
   bottom: 55px;
-  left: 6px;
+  left: 4px;
 }
 
 .filter-button .filter-text {
