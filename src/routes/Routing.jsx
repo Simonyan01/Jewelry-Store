@@ -1,7 +1,7 @@
 import { Route, Routes, useRoutes } from "react-router-dom"
-import HomePage from "../../Content/HomePage"
-import WishList from "../../Content/WishList"
-import { navbar } from "../models"
+import HomePage from "../components/content/HomePage"
+import WishList from "../components/content/WishList"
+import { navbar } from "../components/Header/models"
 
 export const Routing = () => {
     const element = useRoutes([

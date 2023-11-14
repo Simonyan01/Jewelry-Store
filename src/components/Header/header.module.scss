@@ -1,12 +1,15 @@
 .container {
-  @apply px-10 max-w-full bg-primaryBg text-slate-100 flex justify-between items-center h-[4.375rem];
+  @apply px-10 max-w-full bg-headerBg text-slate-200 flex justify-between items-center h-[4.375rem];
   .title {
-    @apply font-bold text-xl leading-normal font-[Montserrat,sans-serif] tracking-wider;
+    @apply font-bold text-xl leading-normal font-primaryFont tracking-widest;
   }
   .nav {
-    @apply flex gap-9;
-  }
-  .navItem {
-    @apply flex text-slate-200 gap-3 items-center;
+    @apply flex gap-11 relative tracking-wider;
+    .navItem {
+      @apply flex  text-slate-200 gap-3 items-center;
+      &::after {
+        @apply content-[""] absolute top-12 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-24 transition-all;
+      }
+    }
   }
 }
