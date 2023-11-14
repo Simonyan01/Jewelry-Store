@@ -6,9 +6,35 @@
   .nav {
     @apply flex gap-11 relative tracking-wider;
     .navItem {
-      @apply flex  text-slate-200 gap-3 items-center;
+      @apply flex text-slate-200 gap-3 items-center;
       &::after {
-        @apply content-[""] absolute top-12 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-24 transition-all;
+        @apply content-[""] absolute top-12 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-28 transition-all;
+      }
+      &:nth-child(1)::after {
+        @apply ml-[-10px] hover:w-28;
+      }
+      &:nth-child(2)::after {
+        @apply ml-[-7px] hover:w-[7.3rem];
+      }
+      &:nth-child(3)::after {
+        @apply ml-[-12px] hover:w-24;
+      }
+      &:nth-child(4)::after {
+        @apply ml-[-9px] hover:w-32;
+      }
+    }
+    .active {
+      &:nth-child(1)::after {
+        @apply ml-[-10px] px-[3.5rem];
+      }
+      &:nth-child(2)::after {
+        @apply ml-[-7px] px-[3.65rem];
+      }
+      &:nth-child(3)::after {
+        @apply ml-[-12px] px-[3rem];
+      }
+      &:nth-child(4)::after {
+        @apply ml-[-9px] px-[4rem];
       }
     }
   }

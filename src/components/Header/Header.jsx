@@ -1,9 +1,9 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
 import { Box, Button, Menu, MenuItem } from "@mui/material"
-import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import { navbar } from "./models"
 import { useState } from "react"
+import styles from "./header.module.scss"
 
 const Header = () => {
     const [elem, setElem] = useState(false);
@@ -27,18 +27,15 @@ const Header = () => {
             <Link to="/" className={styles.title}>COMPOSET</Link>
             <Box className={styles.nav}>
                 {navbar.map(({ id, title, path, icon }) => (
-                    <>
-                        <Link
-                            key={id}
-                            to={path}
-                            className={`${styles.navItem} ${activeLink === id}`}
-                            onClick={() => handleActive(id)}
-                        >
-                            {icon} {title}
-                        </Link>
-                    </>
+                    <Link
+                        key={id}
+                        to={path}
+                        className={`${styles.navItem} ${activeLink === id ? styles.active : ""}`}
+                        onClick={() => handleActive(id)}
+                    >
+                        {icon} {title}
+                    </Link>
                 ))}
-                {/* <div className={styles.underline}></div> */}
                 <Button
                     sx={{ color: "whitesmoke" }}
                     onClick={handleClick}
@@ -55,7 +52,7 @@ const Header = () => {
                     <MenuItem onClick={handleClose}>AM</MenuItem>
                 </Menu>
             </Box>
-        </Box >
+        </Box>
     )
 }
 
