@@ -1,12 +1,12 @@
-import Header from 'components/Header/Header'
-import WishList from 'components/content/WishList'
+import Header from 'components/header/Header'
+import Router from 'routes/Router'
 import './App.scss'
 
 const App = () => {
   return (
     <>
       <Header />
-      <WishList />
+      <Router />
     </>
   )
 }

@@ -17,21 +17,18 @@ const Header = () => {
         setElem(false);
     };
 
-    const handleActive = (id) => {
-        setActiveLink(id);
-    };
-
-
     return (
         <Box className={styles.container}>
-            <Link to="/" className={styles.title}>COMPOSET</Link>
+            <Link to="/" className={styles.title}>
+                COMPOSET
+            </Link>
             <Box className={styles.nav}>
                 {navbar.map(({ id, title, path, icon }) => (
                     <Link
                         key={id}
                         to={path}
                         className={`${styles.navItem} ${activeLink === id ? styles.active : ""}`}
-                        onClick={() => handleActive(id)}
+                        onClick={() => setActiveLink(id)}
                     >
                         {icon} {title}
                     </Link>

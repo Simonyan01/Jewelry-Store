@@ -1,9 +1,11 @@
 import { Route, Routes, useRoutes } from "react-router-dom"
-import HomePage from "../components/content/HomePage"
-import WishList from "../components/content/WishList"
-import { navbar } from "../components/Header/models"
+import { navbar } from "components/header/models"
+import HomePage from "components/content/HomePage"
+import WishList from "components/content/WishList"
+import UserAccount from "components/content/UserAccount"
+import Bag from "components/content/Bag"
 
-export const Routing = () => {
+const Router = () => {
     const element = useRoutes([
         { path: "/", element: <HomePage /> },
         {
@@ -12,12 +14,14 @@ export const Routing = () => {
         },
         {
             path: "/bag",
+            element: <Bag />
         },
         {
             path: "/account",
+            element: <UserAccount />
         },
     ])
-    
+
     return (
         <Routes>
             {navbar.map(({ id, path }) => (
@@ -26,3 +30,5 @@ export const Routing = () => {
         </Routes>
     )
 }
+
+export default Router

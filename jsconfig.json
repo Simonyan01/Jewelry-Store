@@ -9,6 +9,5 @@
       "routes/*": ["routes/*"],
       "assets/*": ["assets/*"]
     }
-  },
-  "include": ["src"]
+  }
 }
