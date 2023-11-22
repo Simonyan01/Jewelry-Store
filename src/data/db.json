@@ -4,37 +4,43 @@
             "id": 1,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
+            "img": "src/images/v.png",
+            "additional": "See More"
         },
         {
             "id": 2,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
+            "img": "src/images/w.png",
+            "additional": "See More"
         },
         {
             "id": 3,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
+            "img": "src/images/x.png",
+            "additional": "See More"
         },
         {
             "id": 4,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
+            "img": "src/images/detail-13.png",
+            "additional": "See More"
         },
         {
             "id": 5,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
+            "img": "src/images/u-3.png",
+            "additional": "See More"
         },
         {
             "id": 6,
             "prize": "499.00$",
             "title": "Custom Name Bracelet",
-            "img": "src/assets/v.png"
-        }
+            "img": "src/images/u-3.png",
+            "additional": "See More"
+        }  
     ]
 }

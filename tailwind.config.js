@@ -6,20 +6,22 @@ export default {
       colors: {
         primaryColor: "#3485ff",
         primaryBg: "#151517",
-        primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.25)",
         headerBg: "rgba(42, 44, 51, 0.55)",
         containerBg: "#2F333A",
         cardBg: "#3B4048",
-        activeCardBg: "#2F333A",
+        activeCardBg: "#202226",
+      },
+      boxShadow: {
+        primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
         primaryFont: "Montserrat,sans-serif",
       },
       transitionTimingFunction: {
-        DEFAULT: "ease-in-out",
+        DEFAULT: "ease-out",
       },
       transitionDuration: {
-        DEFAULT: "300ms",
+        DEFAULT: "350ms",
       },
     },
   },

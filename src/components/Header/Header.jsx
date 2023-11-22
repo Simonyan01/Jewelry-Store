@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     const handleClose = () => {
-        setElem(false);
+        setElem((prev) => !prev);
     };
 
     return (
@@ -27,7 +27,7 @@ const Header = () => {
                     <Link
                         key={id}
                         to={path}
-                        className={`${styles.navItem} ${activeLink === id ? styles.active : ""}`}
+                        className={`${styles.navItem} ${activeLink === id && styles.active}`}
                         onClick={() => setActiveLink(id)}
                     >
                         {icon} {title}
