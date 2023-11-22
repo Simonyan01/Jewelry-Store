@@ -1,0 +1,40 @@
+{
+    "collection": [
+        {
+            "id": 1,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        },
+        {
+            "id": 2,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        },
+        {
+            "id": 3,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        },
+        {
+            "id": 4,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        },
+        {
+            "id": 5,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        },
+        {
+            "id": 6,
+            "prize": "499.00$",
+            "title": "Custom Name Bracelet",
+            "img": "src/assets/v.png"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 .container {
   @apply px-10 max-w-full bg-headerBg text-slate-200 flex justify-between items-center h-[4.375rem];
   .title {
-    @apply font-bold text-xl leading-normal font-primaryFont tracking-widest;
+    @apply font-bold text-xl font-primaryFont tracking-widest;
   }
   .nav {
     @apply flex gap-11 relative tracking-wider;
@@ -10,30 +10,27 @@
       &::after {
         @apply content-[""] absolute top-12 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-28 transition-all;
       }
-      &:nth-child(1)::after {
-        @apply ml-[-10px] hover:w-28;
-      }
       &:nth-child(2)::after {
-        @apply ml-[-7px] hover:w-[7.3rem];
+        @apply ml-[-6px] hover:w-[6.5rem];
       }
       &:nth-child(3)::after {
-        @apply ml-[-12px] hover:w-24;
+        @apply ml-[-7px] hover:w-[7.3rem];
       }
       &:nth-child(4)::after {
+        @apply ml-[-12px] hover:w-24;
+      }
+      &:nth-child(5)::after {
         @apply ml-[-9px] hover:w-32;
       }
     }
     .active {
-      &:nth-child(1)::after {
-        @apply ml-[-10px] px-[3.5rem];
-      }
-      &:nth-child(2)::after {
+      &:nth-child(3)::after {
         @apply ml-[-7px] px-[3.65rem];
       }
-      &:nth-child(3)::after {
+      &:nth-child(4)::after {
         @apply ml-[-12px] px-[3rem];
       }
-      &:nth-child(4)::after {
+      &:nth-child(5)::after {
         @apply ml-[-9px] px-[4rem];
       }
     }

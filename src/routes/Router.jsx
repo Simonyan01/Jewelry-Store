@@ -1,9 +1,9 @@
 import { Route, Routes, useRoutes } from "react-router-dom"
 import { navbar } from "components/header/models"
-import HomePage from "components/content/HomePage"
-import WishList from "components/content/WishList"
-import UserAccount from "components/content/UserAccount"
-import Bag from "components/content/Bag"
+import HomePage from "components/content/home/HomePage"
+import WishList from "components/content/wishlist/WishList"
+import Bag from "components/content/bag/Bag"
+import UserAccount from "components/content/account/UserAccount"
 
 const Router = () => {
     const element = useRoutes([

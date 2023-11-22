@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <Box className={styles.container}>
-            <Link to="/" className={styles.title}>
+            <Link to="/" onClick={() => window.location.href = "/"} className={styles.title}>
                 COMPOSET
             </Link>
             <Box className={styles.nav}>

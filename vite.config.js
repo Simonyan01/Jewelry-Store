@@ -10,6 +10,7 @@ export default defineConfig({
       features: "/src/features",
       routes: "/src/routes",
       assets: "/src/assets",
+      content: "/src/components/content",
     },
   },
 })

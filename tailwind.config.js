@@ -5,10 +5,12 @@ export default {
     extend: {
       colors: {
         primaryColor: "#3485ff",
-        // primaryBg: "#151517",
+        primaryBg: "#151517",
         primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.25)",
         headerBg: "rgba(42, 44, 51, 0.55)",
-        containerBg: "#3e4148",
+        containerBg: "#2F333A",
+        cardBg: "#3B4048",
+        activeCardBg: "#2F333A",
       },
       fontFamily: {
         primaryFont: "Montserrat,sans-serif",

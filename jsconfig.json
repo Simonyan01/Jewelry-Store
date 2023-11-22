@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
     "module": "ESNext",
     "jsx": "react-jsx",
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
       "features/*": ["features/*"],
+      "assets/*": ["assets/*"],
       "routes/*": ["routes/*"],
-      "assets/*": ["assets/*"]
+      "content/*": ["content/*"]
     }
-  }
+  },
+  "include": ["./*"],
+  "exclude": ["node_modules", "dist"]
 }

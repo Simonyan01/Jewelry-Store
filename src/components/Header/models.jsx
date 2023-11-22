@@ -1,21 +1,12 @@
-// export const models = [
-//   { id: 1, name: "Кольцо", img: "./assets/first.png" },
-//   { id: 2, name: "Колье", img: "./assets/second.png" },
-//   { id: 3, name: "Серьги", img: "./assets/third.png" },
-//   { id: 4, name: "Цепь", img: "./assets/fourth.png" },
-//   { id: 5, name: "Брошь", img: "./assets/fifth.png" },
-//   { id: 6, name: "Кулоны", img: "./assets/sixth.png" },
-//   { id: 7, name: "Браслеты", img: "./assets/seventh.png" },
-// ];
+import { v4 as uuidv4 } from "uuid"
 
 export const navbar = [
-    // {
-    //     id: 1,
-    //     path: "/",
-    //     title: "COMPOSET"
-    // },
     {
-        id: 2,
+        id: uuidv4(),
+        path: "/",
+    },
+    {
+        id: uuidv4(),
         title: "Search",
         icon: (
             <svg
@@ -40,7 +31,7 @@ export const navbar = [
         )
     },
     {
-        id: 3,
+        id: uuidv4(),
         title: "Wishlist",
         path: "/wishlist",
         icon: (
@@ -60,7 +51,7 @@ export const navbar = [
         ),
     },
     {
-        id: 4,
+        id: uuidv4(),
         title: "Bag",
         path: "/bag",
         icon: (
@@ -92,9 +83,9 @@ export const navbar = [
         ),
     },
     {
-        id: 5,
+        id: uuidv4(),
         title: "MY ACCOUNT",
         path: "/account",
         icon: "",
-    },
+    }
 ]
