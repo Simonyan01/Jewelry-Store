@@ -10,12 +10,16 @@ export default {
         containerBg: "#2F333A",
         cardBg: "#3B4048",
         activeCardBg: "#202226",
+        boxColor: "rgba(130, 130, 130, 0.55)",
       },
       boxShadow: {
         primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
         primaryFont: "Montserrat,sans-serif",
+      },
+      clipPath: {
+        clipPath: "polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 0% 100%)",
       },
       transitionTimingFunction: {
         DEFAULT: "ease-out",

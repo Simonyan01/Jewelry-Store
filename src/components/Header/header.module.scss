@@ -1,7 +1,7 @@
 .container {
-  @apply px-10 max-w-full bg-headerBg text-slate-200 flex justify-between items-center h-[4.375rem];
+  @apply px-10 select-none max-w-full bg-headerBg text-slate-200 flex justify-between items-center h-[4.375rem];
   .title {
-    @apply font-bold text-xl font-primaryFont tracking-widest;
+    @apply font-bold text-xl font-primaryFont tracking-widest select-none outline-none;
   }
   .nav {
     @apply flex gap-11 relative tracking-wider;

@@ -1,0 +1,28 @@
+.mainContainer {
+  @apply text-white bg-containerBg mt-14 mb-4 mx-72 p-5 max-w-full rounded-xl;
+  
+  .actions {
+    @apply flex justify-between mx-1;
+    .title {
+      @apply font-bold tracking-wider select-none;
+    }
+    .clearButton {
+      @apply text-[#B0B0B0] cursor-pointer;
+    }
+  }
+}
+.subContainer {
+  @apply flex flex-wrap justify-center items-center gap-11;
+  .element {
+    @apply grid place-items-center mx-1 my-4 select-none cursor-pointer;
+    .color {
+      @apply rounded-full;
+    }
+    .title {
+      @apply font-normal tracking-wider;
+    }
+  }
+  .active {
+    @apply bg-activeCardBg shadow-primaryBoxShadow border-activeCardBg transition-all rounded-md px-2 py-2;
+  }
+}

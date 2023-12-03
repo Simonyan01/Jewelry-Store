@@ -24,9 +24,7 @@ const Router = () => {
 
     return (
         <Routes>
-            {navbar.map(({ id, path }) => (
-                <Route key={id} path={path} element={element} />
-            ))}
+            {navbar.map(({ id, path }) => <Route key={id} path={path} element={element} />)}
         </Routes>
     )
 }

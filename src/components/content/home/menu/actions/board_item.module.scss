@@ -1,0 +1,46 @@
+.mainContainer {
+  @apply text-slate-300 mx-48 p-4 bg-[#151517] border-[2px] border-[#202226] rounded-md select-none;
+  .subContainer {
+    @apply flex;
+    .beltContainer {
+      @apply grid place-items-center py-6 w-full;
+      .beltChain {
+        @apply absolute left-[12rem] z-20;
+      }
+      .clipPath {
+        background-color: #494949;
+        width: 950px;
+        height: 40px;
+        z-index: 1;
+        clip-path: polygon(0.5% 0%, 96% 0, 100% 50%, 96% 100%, 0% 100%);
+      }
+    }
+    .refreshButton {
+      @apply cursor-pointer text-[#FFFFFF8C] scale-125;
+    }
+  }
+  .discount {
+    @apply flex justify-between;
+    .title {
+      @apply text-lg font-bold tracking-wide pl-3 text-white;
+    }
+    .discountedPrice {
+      @apply text-base font-normal tracking-widest mt-20 text-white;
+      .discountedPriceText {
+        @apply text-[#828282] mr-2;
+      }
+    }
+  }
+  .boxContainer {
+    @apply flex flex-wrap flex-row gap-5 mt-10 justify-center;
+    .box {
+      @apply text-[#8282828C] w-[70px] h-[70px] border-[1px] rounded-md border-boxColor;
+    }
+  }
+  .totalPrice {
+    @apply text-end text-lg font-medium tracking-wider pt-6 pb-3;
+    .totalPriceText {
+      @apply text-justify font-normal;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.title {
+  @apply font-medium tracking-wider text-xl ml-12 select-none;
+}
+.container {
+  @apply flex justify-center items-center h-full px-12;
+  .card {
+    @apply relative outline-none select-none h-[140px];
+    .sharpIcon {
+      @apply absolute right-0 m-2 p-[1px] cursor-pointer;
+    }
+    .img {
+      @apply bg-cardBg select-none h-full px-[5.5rem] py-8 cursor-pointer object-contain;
+    }
+    .description {
+      @apply flex w-full tracking-wider select-none break-keep;
+      .cardName {
+        @apply text-base w-28 pt-1 font-light text-justify;
+      }
+      .cardPrice {
+        @apply absolute right-0 mt-4 text-base font-normal;
+      }
+    }
+    .additional {
+      @apply underline float-right text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
+    }
+  }
+  .arrowLeft {
+    @apply text-[#B7B7B7] relative bottom-16 right-6 cursor-pointer;
+  }
+  .arrowRight {
+    @apply text-[#B7B7B7] relative bottom-[3.9rem] left-6 cursor-pointer;
+  }
+  .active {
+    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] border-activeCardBg transition-all mt-1 pb-20;
+  }
+}

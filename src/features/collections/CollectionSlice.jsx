@@ -6,20 +6,29 @@ import { getCollections } from "../../components/content/home/fetchAPI";
 
 export const selectCollections = state => state.collections.collection
 export const selectLoading = state => state.collections.loading
+export const selectError = state => state.collections.error
+export const selectActiveLink = state => state.collections.activeLink
 
 const initialState = {
     collection: [],
     loading: false,
     error: null,
+    activeLink: null
 }
 
 const CollectionSlice = createSlice({
     name: "collections",
     initialState,
+    reducers: {
+        switchToActive: (state, action) => {
+            state.activeLink = action.payload
+        },
+    },
     extraReducers: (builder) => {
         builder
-            .addCase(getCollections.pending, (state) => {
+            .addCase(getCollections.pending, (state, action) => {
                 state.loading = true
+                state.error = action.payload
             })
             .addCase(getCollections.fulfilled, (state, action) => {
                 state.loading = false;
@@ -32,5 +41,7 @@ const CollectionSlice = createSlice({
             });
     },
 })
+
+export const { switchToActive } = CollectionSlice.actions
 
 export default CollectionSlice.reducer
