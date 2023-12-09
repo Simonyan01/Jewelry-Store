@@ -1,52 +1,47 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
+import { selectActiveLink, selectLanguageBar, toggleBar } from "../../features/header/HeaderSlice"
+import { switchToActive } from "../../features/header/HeaderSlice"
 import { Box, Button, Menu, MenuItem } from "@mui/material"
+import { useDispatch, useSelector } from "react-redux"
+import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import { navbar } from "./models"
-import { useState } from "react"
-import styles from "./header.module.scss"
 
 const Header = () => {
-    const [elem, setElem] = useState(false);
-    const [activeLink, setActiveLink] = useState(null);
+    const dispatch = useDispatch()
 
-    const handleClick = (event) => {
-        setElem(event.currentTarget);
-    };
+    const activeLink = useSelector(selectActiveLink)
+    const languageBar = useSelector(selectLanguageBar)
 
-    const handleClose = () => {
-        setElem((prev) => !prev);
-    };
+    const handleClose = (prev) => dispatch(toggleBar(!prev))
 
     return (
         <Box className={styles.container}>
-            <Link to="/" onClick={() => window.location.href = "/"} className={styles.title}>
-                COMPOSET
-            </Link>
             <Box className={styles.nav}>
                 {navbar.map(({ id, title, path, icon }) => (
                     <Link
                         key={id}
                         to={path}
                         className={`${styles.navItem} ${activeLink === id && styles.active}`}
-                        onClick={() => setActiveLink(id)}
+                        onClick={() => dispatch(switchToActive(id))}
                     >
                         {icon} {title}
                     </Link>
                 ))}
                 <Button
                     sx={{ color: "whitesmoke" }}
-                    onClick={handleClick}
+                    onClick={(e) => dispatch(toggleBar(e.currentTarget))}
                 >
-                    EN {!elem ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+                    EN {!languageBar ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
                 </Button>
                 <Menu
                     color="black"
-                    anchorEl={elem}
-                    open={elem}
+                    anchorEl={languageBar}
+                    open={languageBar}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleClose}>RU</MenuItem>
-                    <MenuItem onClick={handleClose}>AM</MenuItem>
+                    <MenuItem>RU</MenuItem>
+                    <MenuItem>AM</MenuItem>
                 </Menu>
             </Box>
         </Box>

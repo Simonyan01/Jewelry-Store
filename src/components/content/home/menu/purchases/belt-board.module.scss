@@ -1,5 +1,5 @@
 .mainContainer {
-  @apply text-slate-300 mx-48 p-4 bg-[#151517] border-[2px] border-[#202226] rounded-md select-none;
+  @apply text-slate-300 mx-48 mb-6  p-4 bg-[#151517] border-[2px] border-[#202226] rounded-md select-none;
   .subContainer {
     @apply flex;
     .beltContainer {
@@ -8,11 +8,18 @@
         @apply absolute left-[12rem] z-20;
       }
       .clipPath {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
         background-color: #494949;
         width: 950px;
-        height: 40px;
+        height: 42px;
         z-index: 1;
         clip-path: polygon(0.5% 0%, 96% 0, 100% 50%, 96% 100%, 0% 100%);
+        .activeImg {
+          @apply h-12 w-max;
+        }
       }
     }
     .refreshButton {
@@ -34,7 +41,7 @@
   .boxContainer {
     @apply flex flex-wrap flex-row gap-5 mt-10 justify-center;
     .box {
-      @apply text-[#8282828C] w-[70px] h-[70px] border-[1px] rounded-md border-boxColor;
+      @apply text-[#8282828C] grid place-items-center w-[70px] h-[70px] border-[1px] rounded-md border-boxColor;
     }
   }
   .totalPrice {

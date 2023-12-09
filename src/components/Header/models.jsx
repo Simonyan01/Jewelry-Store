@@ -4,6 +4,7 @@ export const navbar = [
     {
         id: uuidv4(),
         path: "/",
+        title: "COMPOSET",
     },
     {
         id: uuidv4(),
