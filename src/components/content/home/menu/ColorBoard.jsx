@@ -1,17 +1,16 @@
-import { selectActiveLink, selectColorBoard, switchToActive } from "../../../../features/board/ColorBoardSlice.jsx"
+import { changeBeltColour, getColorBoard, selectActiveLink, selectColorBoard, switchToActive } from "../../../../features/board/BoardSlice.jsx"
 import { useDispatch, useSelector } from "react-redux"
+import BeltBoard from "./purchases/BeltBoard.jsx";
 import ClearIcon from '@mui/icons-material/Clear';
-import { getColorBoard } from "../fetchAPI.js"
-import BoardItem from "./actions/BoardItem.jsx";
-import styles from "./board.module.scss";
+import styles from "./color-board.module.scss";
 import { Box } from "@mui/material"
 import { useEffect } from "react"
 
 const ColorBoard = () => {
     const dispatch = useDispatch()
 
-    const board = useSelector(selectColorBoard);
     const activeLink = useSelector(selectActiveLink);
+    const board = useSelector(selectColorBoard);
 
     useEffect(() => {
         dispatch(getColorBoard())
@@ -31,14 +30,14 @@ const ColorBoard = () => {
                             className={`${styles.element} ${activeLink === id && styles.active}`}
                             onClick={() => dispatch(switchToActive(id))}
                         >
-                            <img className={styles.color} src={img} alt={title} />
+                            <img className={styles.color} onClick={() => dispatch(changeBeltColour(img))} src={img} alt={title} />
                             <Box className={styles.title}>{title}</Box>
                             <span className={styles.price}>{price}</span>
                         </Box>
                     ))}
                 </Box>
             </Box>
-            <BoardItem id={board} />
+            <BeltBoard />
         </>
     )
 }

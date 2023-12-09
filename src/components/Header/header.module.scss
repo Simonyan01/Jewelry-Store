@@ -1,14 +1,17 @@
 .container {
   @apply px-10 select-none max-w-full bg-headerBg text-slate-200 flex justify-between items-center h-[4.375rem];
-  .title {
-    @apply font-bold text-xl font-primaryFont tracking-widest select-none outline-none;
-  }
   .nav {
     @apply flex gap-11 relative tracking-wider;
     .navItem {
       @apply flex text-slate-200 gap-3 items-center;
+      &:nth-child(1) {
+        @apply mr-[52rem] font-bold text-xl font-primaryFont tracking-widest select-none outline-none;
+      }
       &::after {
         @apply content-[""] absolute top-12 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-28 transition-all;
+      }
+      &:nth-child(1)::after {
+        @apply ml-0 hover:w-0;
       }
       &:nth-child(2)::after {
         @apply ml-[-6px] hover:w-[6.5rem];
