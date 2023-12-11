@@ -21,6 +21,9 @@
           @apply h-12 w-max;
         }
       }
+      .activeColour{
+        @apply bg-[]
+      }
     }
     .refreshButton {
       @apply cursor-pointer text-[#FFFFFF8C] scale-125;

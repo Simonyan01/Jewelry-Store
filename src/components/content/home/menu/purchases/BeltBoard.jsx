@@ -1,20 +1,18 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { selectBoard } from "../../../../../features/collections/CollectionSlice";
-import { clearBeltItems, selectBeltColour, selectBox } from "../../../../../features/board/BoardSlice";
+import { deleteItems, selectBeltColour, selectBox, selectColorBoard } from "../../../../../features/board/BoardSlice";
+import { selectBoard } from "../../../../../features/board/BoardSlice";
+import { useDispatch, useSelector, } from "react-redux";
 import belt from "../../../../../images/board/belt.png"
 import RefreshIcon from '@mui/icons-material/Refresh';
 import styles from "./belt-board.module.scss"
-import { useDispatch, useSelector, } from "react-redux";
 import { Box } from "@mui/material"
 
 const BeltBoard = () => {
     const dispatch = useDispatch()
 
-    const isPainted = useSelector(selectBeltColour)
     const box = useSelector(selectBox)
-    const board = useSelector(selectBoard);
-
-    // console.log(isPainted);
+    const beltBoard = useSelector(selectBoard);
+    const isPainted = useSelector(selectBeltColour)
+    const colorBoard = useSelector(selectColorBoard);
 
     return (
         <Box className={styles.mainContainer}>
@@ -24,15 +22,22 @@ const BeltBoard = () => {
                         src={belt}
                         alt="Belt chain"
                         width={210}
-                        className={styles.beltChain}    
+                        className={styles.beltChain}
                     />
-                    <Box className={`${styles.clipPath} ${isPainted && styles.activeColour}`}>
-                        {board?.map(({ id, img, title }) => (
+                    <Box
+                        style={{ backgroundImage: `url(${isPainted})` }}
+                        className={`${styles.clipPath}`}>
+                        {beltBoard?.map(({ id, img, title }) => (
                             <img className={styles.activeImg} key={id} src={img} alt={title} />
                         ))}
                     </Box>
                 </Box>
-                <RefreshIcon onClick={() => dispatch(clearBeltItems())} className={styles.refreshButton} />
+                <RefreshIcon
+                    className={styles.refreshButton}
+                    onClick={() => {
+                        dispatch(deleteItems())
+                    }}
+                />
             </Box>
             <Box className={styles.discount}>
                 <Box className={styles.title}>Belt</Box>
@@ -46,7 +51,7 @@ const BeltBoard = () => {
                         {
                             item && <>
                                 <img src={box[i].img} alt="box" />
-                                <Box>{board[i].price}</Box>
+                                <Box>{colorBoard[i].price}</Box>
                             </>
                         }
                     </Box>

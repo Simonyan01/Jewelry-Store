@@ -8,6 +8,9 @@
     .sharpIcon {
       @apply absolute right-0 m-2 p-[0.6px] cursor-pointer;
     }
+    .favoriteIcon {
+      @apply absolute right-0 m-2 p-[0.6px] cursor-pointer;
+    }
     .img {
       @apply bg-cardBg select-none h-full object-contain px-[5.5rem] py-8 cursor-pointer;
     }
