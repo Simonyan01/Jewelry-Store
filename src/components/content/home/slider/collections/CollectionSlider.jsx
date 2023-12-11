@@ -4,12 +4,12 @@ import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from "./collection.module.scss"
 import { useEffect, useRef } from "react";
-import { useSnackbar } from 'notistack';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
@@ -17,7 +17,6 @@ import 'swiper/css';
 const CollectionSlider = () => {
     const swiperRef = useRef()
     const dispatch = useDispatch()
-    const { enqueueSnackbar } = useSnackbar();
 
     const error = useSelector(selectError);
     const loading = useSelector(selectLoading);
@@ -25,12 +24,7 @@ const CollectionSlider = () => {
     const activeLink = useSelector(selectActiveLink);
     const collections = useSelector(selectCollections);
 
-    const handleClickVariant = (text, variant) => () => {
-        enqueueSnackbar(text, { variant });
-    };
-
     useEffect(() => {
-        dispatch(getBeltBoard())
         dispatch(getCollections())
     }, [dispatch])
 
@@ -64,17 +58,27 @@ const CollectionSlider = () => {
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-                                            <FavoriteBorderSharpIcon
-                                                className={styles.sharpIcon}
-                                                onClick={handleClickVariant(`${title} added in Wishlist`, 'success')}
-                                            />
+                                            {activeLink === id ?
+                                                <FavoriteIcon
+                                                    className={styles.favoriteIcon}
+                                                    onClick={() => {
+                                                        dispatch(switchToActive(null))
+                                                    }}
+                                                /> :
+                                                <FavoriteBorderSharpIcon
+                                                    className={styles.sharpIcon}
+                                                    onClick={() => {
+                                                        dispatch(switchToActive(id))
+                                                    }}
+                                                />
+                                            }
                                             <img
                                                 src={img}
                                                 alt={title}
                                                 className={styles.img}
                                                 onClick={() => {
                                                     if (dispatch(postCollections({ price, title, img }))) {
-                                                        setTimeout(() => dispatch(getBeltBoard()), 1000)
+                                                        setTimeout(() => dispatch(getBeltBoard()), 800)
                                                     }
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))

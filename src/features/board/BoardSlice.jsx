@@ -6,12 +6,13 @@ const beltBoardURL = "http://localhost:8080/belt_board"
 
 // Selected States
 
-export const selectColorBoard = state => state.board.board
-export const selectBeltColour = state => state.board.isPainted
+export const selectColorBoard = state => state.board.colorBoard
 export const selectActiveLink = state => state.board.activeLink
+export const selectBeltColour = state => state.board.isPainted
+export const selectBoard = state => state.board.beltBoard
 export const selectBox = state => state.board.box
 
-// GET 
+// GET METHOD
 
 export const getColorBoard = createAsyncThunk(
     "getColorBoard",
@@ -43,7 +44,8 @@ const initialState = {
     activeLink: null,
     loading: false,
     isPainted: "",
-    board: [],
+    beltBoard: [],
+    colorBoard: [],
     box: [
         undefined, undefined, undefined, undefined, undefined,
         undefined, undefined, undefined, undefined, undefined,
@@ -61,8 +63,8 @@ const boardSlice = createSlice({
         changeBeltColour: (state, action) => {
             state.isPainted = action.payload
         },
-        clearBeltItems: (state, action) => {
-            state.board = state.board.filter(val => val.id !== action.payload.id)
+        deleteItems: (state) => {
+            state.beltBoard = []
         },
         changeBox: (state, action) => {
             let i = state.box.indexOf(undefined)
@@ -76,15 +78,30 @@ const boardSlice = createSlice({
                 state.loading = true
             })
             .addCase(getColorBoard.fulfilled, (state, action) => {
-                state.board = action.payload;
+                state.colorBoard = action.payload;
+                state.loading = false;
+                state.error = null
+            })
+            .addCase(getColorBoard.rejected, (state, action) => {
+                state.error = action.error.message;
                 state.loading = false;
             })
-            .addCase(getColorBoard.rejected, (state) => {
+            // BELT BOARD
+            .addCase(getBeltBoard.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(getBeltBoard.fulfilled, (state, action) => {
+                state.beltBoard = action.payload;
+                state.loading = false;
+                state.error = null
+            })
+            .addCase(getBeltBoard.rejected, (state, action) => {
+                state.error = action.error.message;
                 state.loading = false;
             })
     },
 })
 
-export const { switchToActive, changeBeltColour, clearBeltItems, changeBox } = boardSlice.actions
+export const { switchToActive, changeBeltColour, deleteItems, changeBox } = boardSlice.actions
 
 export default boardSlice.reducer

@@ -4,33 +4,27 @@ import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useRef } from "react";
 import styles from "./charm.module.scss"
-import { useSnackbar } from "notistack";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
 const CharmSlider = () => {
-    const { enqueueSnackbar } = useSnackbar();
-    const dispatch = useDispatch()
     const swiperRef = useRef()
+    const dispatch = useDispatch()
 
-    const activeLink = useSelector(selectActiveLink);
-    const modalSrc = useSelector(selectModalSrc);
-    const loading = useSelector(selectLoading);
-    const charms = useSelector(selectCharms);
     const error = useSelector(selectError);
-
-    const handleClickVariant = (text, variant) => () => {
-        enqueueSnackbar(text, { variant });
-    };
+    const charms = useSelector(selectCharms);
+    const loading = useSelector(selectLoading);
+    const modalSrc = useSelector(selectModalSrc);
+    const activeLink = useSelector(selectActiveLink);
 
     useEffect(() => {
-        dispatch(getBeltBoard())
         dispatch(getCharms())
     }, [dispatch])
 
@@ -66,17 +60,27 @@ const CharmSlider = () => {
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-                                            <FavoriteBorderSharpIcon
-                                                className={styles.sharpIcon}
-                                                onClick={handleClickVariant(`${title} added in Wishlist`, 'success')}
-                                            />
+                                            {activeLink === id ?
+                                                <FavoriteIcon
+                                                    className={styles.favoriteIcon}
+                                                    onClick={() => {
+                                                        dispatch(switchToActive(null))
+                                                    }}
+                                                /> :
+                                                <FavoriteBorderSharpIcon
+                                                    className={styles.sharpIcon}
+                                                    onClick={() => {
+                                                        dispatch(switchToActive(id))
+                                                    }}
+                                                />
+                                            }
                                             <img
                                                 src={img}
                                                 alt={title}
                                                 className={styles.img}
                                                 onClick={() => {
                                                     if (dispatch(postCharms({ price, title, img }))) {
-                                                        setTimeout(() => dispatch(getBeltBoard()), 1000)
+                                                        setTimeout(() => dispatch(getBeltBoard()), 800)
                                                     }
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))

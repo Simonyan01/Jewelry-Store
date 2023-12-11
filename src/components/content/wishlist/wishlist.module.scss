@@ -1,0 +1,6 @@
+.mainContainer {
+  @apply bg-[#2F333A] min-h-screen text-slate-200;
+  .pagination {
+    @apply flex justify-end px-24 pt-6 select-none;
+  }
+}

@@ -4,9 +4,12 @@
 .container {
   @apply flex justify-center items-center h-full px-12;
   .card {
-    @apply relative outline-none select-none h-[140px];
+    @apply relative text-center outline-none select-none h-[140px];
     .sharpIcon {
       @apply absolute right-0 m-2 p-[1px] cursor-pointer;
+    }
+    .favoriteIcon {
+      @apply absolute right-0 m-2 p-[0.6px] cursor-pointer;
     }
     .img {
       @apply bg-cardBg select-none h-full px-[5.5rem] py-8 cursor-pointer object-contain;
@@ -34,6 +37,6 @@
     @apply text-[#B7B7B7] relative bottom-[3.9rem] left-6 cursor-pointer;
   }
   .active {
-    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] border-activeCardBg transition-all mt-1 pb-20;
+    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] border-activeCardBg transition-all pb-20;
   }
 }

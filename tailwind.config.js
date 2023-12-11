@@ -13,7 +13,7 @@ export default {
         boxColor: "rgba(130, 130, 130, 0.55)",
       },
       boxShadow: {
-        primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.25)",
+        primaryBoxShadow: "0px 0px 15px 2px rgba(0, 0, 0, 0.40)",
       },
       fontFamily: {
         primaryFont: "Montserrat,sans-serif",
