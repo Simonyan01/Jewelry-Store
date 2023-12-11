@@ -2,9 +2,9 @@ import { changeBeltColour, getBeltBoard, getColorBoard, selectActiveLink, select
 import { useDispatch, useSelector } from "react-redux"
 import BeltBoard from "./purchases/BeltBoard.jsx";
 import ClearIcon from '@mui/icons-material/Clear';
-import styles from "./color-board.module.scss"
-import { Box } from "@mui/material"
-import { useEffect } from "react"
+import styles from "./color-board.module.scss";
+import { Box } from "@mui/material";
+import { useEffect } from "react";
 
 const ColorBoard = () => {
     const dispatch = useDispatch()
