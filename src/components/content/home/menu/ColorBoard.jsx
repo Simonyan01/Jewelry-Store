@@ -1,10 +1,9 @@
 import { changeBeltColour, getBeltBoard, getColorBoard, selectActiveLink, selectColorBoard, switchToActive } from "../../../../features/board/BoardSlice.jsx"
 import { useDispatch, useSelector } from "react-redux"
-import BeltBoard from "./purchases/BeltBoard.jsx";
 import ClearIcon from '@mui/icons-material/Clear';
 import styles from "./color-board.module.scss";
-import { Box } from "@mui/material"
-import { useEffect } from "react"
+import { Box } from "@mui/material";
+import { useEffect } from "react";
 
 const ColorBoard = () => {
     const dispatch = useDispatch()
@@ -29,21 +28,18 @@ const ColorBoard = () => {
                         <Box
                             key={id}
                             className={`${styles.element} ${activeLink === id && styles.active}`}
-                            onClick={() => dispatch(switchToActive(id))}
+                            onClick={() => {
+                                dispatch(switchToActive(id))
+                                dispatch(changeBeltColour(img))
+                            }}
                         >
-                            <img
-                                className={styles.color}
-                                onClick={() => dispatch(changeBeltColour(img))}
-                                src={img}
-                                alt={title}
-                            />
+                            <img className={styles.color} src={img} alt={title} />
                             <Box className={styles.title}>{title}</Box>
                             <span className={styles.price}>{price}</span>
                         </Box>
                     ))}
                 </Box>
             </Box>
-            <BeltBoard />
         </>
     )
 }

@@ -1,10 +1,11 @@
-import { deleteItems, selectBeltColour, selectBox, selectColorBoard } from "../../../../../features/board/BoardSlice";
+import { deleteBeltBoardItem, getBeltBoard, selectBeltColour, selectBox, selectColorBoard } from "../../../../../features/board/BoardSlice";
 import { selectBoard } from "../../../../../features/board/BoardSlice";
 import { useDispatch, useSelector, } from "react-redux";
 import belt from "../../../../../images/board/belt.png"
 import RefreshIcon from '@mui/icons-material/Refresh';
 import styles from "./belt-board.module.scss"
 import { Box } from "@mui/material"
+import { useEffect } from "react";
 
 const BeltBoard = () => {
     const dispatch = useDispatch()
@@ -13,6 +14,10 @@ const BeltBoard = () => {
     const beltBoard = useSelector(selectBoard);
     const isPainted = useSelector(selectBeltColour)
     const colorBoard = useSelector(selectColorBoard);
+
+    useEffect(() => {
+        dispatch(getBeltBoard())
+    }, [dispatch])
 
     return (
         <Box className={styles.mainContainer}>
@@ -35,7 +40,8 @@ const BeltBoard = () => {
                 <RefreshIcon
                     className={styles.refreshButton}
                     onClick={() => {
-                        dispatch(deleteItems())
+                        dispatch(deleteBeltBoardItem(beltBoard[0].id)) &&
+                            setTimeout(() => dispatch(getBeltBoard()), 200)
                     }}
                 />
             </Box>

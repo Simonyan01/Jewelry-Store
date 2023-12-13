@@ -28,11 +28,11 @@ const CharmSlider = () => {
         dispatch(getCharms())
     }, [dispatch])
 
-    return <>
-        <p className={`${styles.title} py-10`}> CHARMS </p>
-        <Box>
-            {loading ? <CircularProgress /> :
-                error ? <p className={styles.title}>Data not found.</p> :
+    return (
+        <>
+            <p className={`${styles.title} py-10`}> CHARMS </p>
+            {loading ? <CircularProgress className={styles.progress} /> :
+                error ? <p className={styles.errorText}>Data not found.</p> :
                     <Box className={styles.container}>
                         <ArrowBackIosNewIcon
                             className={`${styles.arrowLeft} arrow-Left`}
@@ -79,11 +79,10 @@ const CharmSlider = () => {
                                                 alt={title}
                                                 className={styles.img}
                                                 onClick={() => {
-                                                    if (dispatch(postCharms({ price, title, img }))) {
-                                                        setTimeout(() => dispatch(getBeltBoard()), 800)
-                                                    }
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
+                                                    dispatch(postCharms({ price, title, img })) &&
+                                                        setTimeout(() => dispatch(getBeltBoard()), 1000)
                                                 }}
                                             />
                                             <Box className={styles.description}>
@@ -124,8 +123,8 @@ const CharmSlider = () => {
                         />
                     </Box>
             }
-        </Box>
-    </>
+        </>
+    )
 }
 
 export default CharmSlider

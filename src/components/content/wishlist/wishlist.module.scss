@@ -1,6 +1,51 @@
+.progress {
+  @apply relative top-0 left-2/4;
+}
+.errorText {
+  @apply grid place-items-center font-medium tracking-wider text-xl ml-12 text-slate-300 select-none min-h-screen text-center;
+}
 .mainContainer {
-  @apply bg-[#2F333A] min-h-screen text-slate-200;
+  @apply bg-[#2F333A] min-h-screen w-full text-slate-300;
+  .wishlistContainer {
+    @apply flex flex-wrap justify-evenly items-center gap-8 pt-20 px-24;
+    .card {
+      @apply relative text-center outline-none select-none;
+      .sharpIcon {
+        @apply absolute right-0 m-2 p-[0.6px] cursor-pointer;
+      }
+      .favoriteIcon {
+        @apply absolute right-0 m-2 p-[0.6px] cursor-pointer;
+      }
+      .img {
+        @apply bg-cardBg select-none h-[145px] px-[5rem] w-full py-8 cursor-pointer;
+      }
+      .description {
+        @apply flex w-full tracking-wider select-none break-keep px-1;
+        .cardName {
+          @apply text-base w-28 pt-1 font-light text-justify;
+        }
+        .cardPrice {
+          @apply absolute right-0 mt-4 text-base font-normal;
+        }
+      }
+      .additional {
+        @apply flex justify-between pt-3;
+        .addToBag {
+          @apply underline text-[#3485FF] select-none cursor-pointer font-normal text-sm;
+        }
+        .moreInfo {
+          @apply underline text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
+          .modal {
+            @apply flex justify-center bg-[rgb(0,0,0,0.40)] w-full h-[145px] scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest px-3;
+          }
+        }
+      }
+    }
+    .active {
+      @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] rounded-md border-activeCardBg transition-all pb-2;
+    }
+  }
   .pagination {
-    @apply flex justify-end px-24 pt-6 select-none;
+    @apply flex justify-end pr-16 pt-20 select-none;
   }
 }

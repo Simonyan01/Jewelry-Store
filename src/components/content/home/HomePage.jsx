@@ -1,13 +1,14 @@
-import { Box } from "@mui/material"
-import Slider from "./slider/Slider"
+import BeltBoard from "./menu/purchases/BeltBoard"
 import ColorBoard from "./menu/ColorBoard"
+import Slider from "./slider/Slider"
 
 const HomePage = () => {
     return (
-        <Box>
+        <>
             <Slider />
             <ColorBoard />
-        </Box>
+            <BeltBoard />
+        </>
     )
 }
 

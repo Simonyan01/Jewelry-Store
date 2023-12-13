@@ -1,6 +1,12 @@
 .title {
   @apply font-medium tracking-wider text-xl ml-12 select-none;
 }
+.progress {
+  @apply relative top-0 left-2/4;
+}
+.errorText {
+  @apply font-medium tracking-wider text-xl ml-12 select-none text-center;
+}
 .container {
   @apply flex justify-center items-center h-full px-12;
   .card {
@@ -37,6 +43,6 @@
     @apply text-[#B7B7B7] relative bottom-[3.9rem] left-6 cursor-pointer;
   }
   .active {
-    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] border-activeCardBg transition-all pb-20;
+    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] rounded-md border-activeCardBg transition-all pb-20;
   }
 }

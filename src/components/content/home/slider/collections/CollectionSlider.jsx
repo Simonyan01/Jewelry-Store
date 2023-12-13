@@ -1,10 +1,11 @@
-import { selectCollections, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCollections, postCollections } from "../../../../../features/collections/CollectionSlice";
+import { selectCollections, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCollections } from "../../../../../features/collections/CollectionSlice";
+import { postToWishlist } from "../../../../../features/wishlist/WishListSlice";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
-import { getBeltBoard } from "../../../../../features/board/BoardSlice";
+// import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
-import FavoriteIcon from '@mui/icons-material/Favorite';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,16 +24,21 @@ const CollectionSlider = () => {
     const modalSrc = useSelector(selectModalSrc);
     const activeLink = useSelector(selectActiveLink);
     const collections = useSelector(selectCollections);
+    // const wishlist = useSelector(selectWishlist)
 
     useEffect(() => {
         dispatch(getCollections())
     }, [dispatch])
 
+    // const someElem = collections.some(el => el.id === wishlist.id)
+
+
+
     return (
         <>
             <p className={`${styles.title} pb-8`}>COLLECTION</p>
-            {loading ? <CircularProgress /> :
-                error ? <p className={styles.title}>Data not found.</p> :
+            {loading ? <CircularProgress className={styles.progress} /> :
+                error ? <p className={styles.errorText}>Data not found.</p> :
                     <Box className={styles.container}>
                         <ArrowBackIosNewIcon
                             className={`${styles.arrowLeft} arrow-left`}
@@ -58,30 +64,31 @@ const CollectionSlider = () => {
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-                                            {activeLink === id ?
-                                                <FavoriteIcon
+
+                                            {/* <FavoriteIcon
                                                     className={styles.favoriteIcon}
                                                     onClick={() => {
                                                         dispatch(switchToActive(null))
                                                     }}
-                                                /> :
-                                                <FavoriteBorderSharpIcon
-                                                    className={styles.sharpIcon}
-                                                    onClick={() => {
-                                                        dispatch(switchToActive(id))
-                                                    }}
-                                                />
-                                            }
+                                                /> : */}
+                                            <FavoriteBorderSharpIcon
+                                                className={styles.sharpIcon}
+                                                onClick={() => {
+                                                    dispatch(postToWishlist({ price, title, img, additional }))
+                                                    dispatch(switchToActive(id))
+                                                }}
+                                            />
+
                                             <img
                                                 src={img}
                                                 alt={title}
                                                 className={styles.img}
                                                 onClick={() => {
-                                                    if (dispatch(postCollections({ price, title, img }))) {
-                                                        setTimeout(() => dispatch(getBeltBoard()), 800)
-                                                    }
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
+                                                    // dispatch(postCollections({ price, title, img })) &&
+                                                    //     setTimeout(() => dispatch(getBeltBoard()), 1000)
+                                                    // }
                                                 }}
                                             />
                                             <Box className={styles.description}>
