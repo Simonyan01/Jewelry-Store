@@ -31,9 +31,10 @@ const WishList = () => {
                     <FavoriteIcon
                       className={styles.favoriteIcon}
                       onClick={() => {
-                        dispatch(deleteInWishlist(id))
-                        dispatch(getWishlist())
                         dispatch(switchToActive(null))
+                        if (dispatch(deleteInWishlist(id))) {
+                          dispatch(getWishlist())
+                        }
                       }}
                     />
                     <img

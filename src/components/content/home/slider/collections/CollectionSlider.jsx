@@ -30,9 +30,7 @@ const CollectionSlider = () => {
         dispatch(getCollections())
     }, [dispatch])
 
-    // const someElem = collections.some(el => el.id === wishlist.id)
-
-
+    // const someElem = collections.filter(el => el.id === wishlist.id)
 
     return (
         <>
@@ -78,7 +76,6 @@ const CollectionSlider = () => {
                                                     dispatch(switchToActive(id))
                                                 }}
                                             />
-
                                             <img
                                                 src={img}
                                                 alt={title}
@@ -87,7 +84,7 @@ const CollectionSlider = () => {
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
                                                     // dispatch(postCollections({ price, title, img })) &&
-                                                    //     setTimeout(() => dispatch(getBeltBoard()), 1000)
+                                                    //     setTimeout(() => dispatch(getBeltBoard()), 700)
                                                     // }
                                                 }}
                                             />

@@ -1,4 +1,4 @@
-import { changeBeltColour, getBeltBoard, getColorBoard, selectActiveLink, selectColorBoard, switchToActive } from "../../../../features/board/BoardSlice.jsx"
+import { changeBeltColour, getColorBoard, selectActiveLink, selectColorBoard, switchToActive } from "../../../../features/board/BoardSlice.jsx"
 import { useDispatch, useSelector } from "react-redux"
 import ClearIcon from '@mui/icons-material/Clear';
 import styles from "./color-board.module.scss";
@@ -12,7 +12,6 @@ const ColorBoard = () => {
     const colorBoard = useSelector(selectColorBoard);
 
     useEffect(() => {
-        dispatch(getBeltBoard())
         dispatch(getColorBoard())
     }, [dispatch])
 
