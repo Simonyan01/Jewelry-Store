@@ -64,7 +64,6 @@ const collectionSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        //  GET
         builder
             .addCase(getCollections.pending, (state) => {
                 state.loading = true

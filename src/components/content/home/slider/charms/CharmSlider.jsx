@@ -82,7 +82,7 @@ const CharmSlider = () => {
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
                                                     dispatch(postCharms({ price, title, img })) &&
-                                                        setTimeout(() => dispatch(getBeltBoard()), 1000)
+                                                        setTimeout(() => dispatch(getBeltBoard()), 700)
                                                 }}
                                             />
                                             <Box className={styles.description}>

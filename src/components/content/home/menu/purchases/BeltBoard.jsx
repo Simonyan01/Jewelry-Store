@@ -1,4 +1,4 @@
-import { deleteBeltBoardItem, getBeltBoard, selectBeltColour, selectBox, selectColorBoard } from "../../../../../features/board/BoardSlice";
+import { changeBeltColour, deleteBeltBoardItem, getBeltBoard, selectBeltColour, selectBox, selectColorBoard, switchToActive } from "../../../../../features/board/BoardSlice";
 import { selectBoard } from "../../../../../features/board/BoardSlice";
 import { useDispatch, useSelector, } from "react-redux";
 import belt from "../../../../../images/board/belt.png"
@@ -40,8 +40,13 @@ const BeltBoard = () => {
                 <RefreshIcon
                     className={styles.refreshButton}
                     onClick={() => {
-                        dispatch(deleteBeltBoardItem(beltBoard[0].id)) &&
-                            setTimeout(() => dispatch(getBeltBoard()), 200)
+                        if (dispatch(deleteBeltBoardItem(beltBoard[0].id))) {
+                            setTimeout(() => {
+                                dispatch(getBeltBoard())
+                                dispatch(changeBeltColour(""))
+                                dispatch(switchToActive(null))
+                            }, 300)
+                        }
                     }}
                 />
             </Box>

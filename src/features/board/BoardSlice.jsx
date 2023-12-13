@@ -40,8 +40,10 @@ export const getBeltBoard = createAsyncThunk(
     }
 )
 
+// DELETE METHOD
+
 export const deleteBeltBoardItem = createAsyncThunk(
-    "beltBoardItem/deleteBeltBoardItem",
+    "deleteBeltBoardItem",
     async (id, thunkAPI) => {
         try {
             const res = await axios.delete(`${beltBoardURL}/${id}`)
