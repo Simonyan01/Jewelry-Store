@@ -40,6 +40,20 @@ export const getBeltBoard = createAsyncThunk(
     }
 )
 
+export const deleteBeltBoardItem = createAsyncThunk(
+    "beltBoardItem/deleteBeltBoardItem",
+    async (id, thunkAPI) => {
+        try {
+            const res = await axios.delete(`${beltBoardURL}/${id}`)
+            return res.data
+        } catch (err) {
+            return thunkAPI.rejectWithValue(
+                err.message || "Failed to delete belt board item"
+            )
+        }
+    }
+)
+
 const initialState = {
     activeLink: null,
     loading: false,
@@ -72,7 +86,7 @@ const boardSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        // COLOUR BOARD
+        //  GET COLOUR BOARD
         builder
             .addCase(getColorBoard.pending, (state) => {
                 state.loading = true
@@ -86,7 +100,7 @@ const boardSlice = createSlice({
                 state.error = action.error.message;
                 state.loading = false;
             })
-            // BELT BOARD
+            //  GET BELT BOARD
             .addCase(getBeltBoard.pending, (state) => {
                 state.loading = true
             })
@@ -96,6 +110,19 @@ const boardSlice = createSlice({
                 state.error = null
             })
             .addCase(getBeltBoard.rejected, (state, action) => {
+                state.error = action.error.message;
+                state.loading = false;
+            })
+            //  DELETE BELT BOARD ITEM
+            .addCase(deleteBeltBoardItem.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(deleteBeltBoardItem.fulfilled, (state, action) => {
+                state.beltBoard = state.beltBoard.filter((el) => el.id !== action.payload);
+                state.loading = false;
+                state.error = null
+            })
+            .addCase(deleteBeltBoardItem.rejected, (state, action) => {
                 state.error = action.error.message;
                 state.loading = false;
             })

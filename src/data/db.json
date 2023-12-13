@@ -257,5 +257,21 @@
       "title": "Green Mood",
       "img": "src/images/board/green.png"
     }
+  ],
+  "wishlist": [
+    {
+      "price": "499.00$",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/detail-13.png",
+      "additional": "See More",
+      "id": 1
+    },
+    {
+      "price": "499.00$",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/u-3.png",
+      "additional": "See More",
+      "id": 2
+    }
   ]
 }
