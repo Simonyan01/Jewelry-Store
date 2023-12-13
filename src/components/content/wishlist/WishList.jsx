@@ -1,6 +1,6 @@
 import { deleteInWishlist, getWishlist, seeMoreInfo, selectActiveLink, selectError, selectLoading, selectModalSrc, selectWishlist, switchToActive } from "../../../features/wishlist/WishListSlice"
 import { Box, CircularProgress, Fade, Pagination, Stack } from "@mui/material"
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"
 import { paginataionStyles } from "./styles"
 import styles from "./wishlist.module.scss"
