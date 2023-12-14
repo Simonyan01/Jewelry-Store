@@ -29,12 +29,12 @@
         }
       }
       .additional {
-        @apply flex justify-between pt-3;
+        @apply flex justify-between pt-3 px-1;
         .addToBag {
-          @apply underline text-[#3485FF] select-none cursor-pointer font-normal text-sm;
+          @apply underline text-[#3485FF] hover:no-underline active:text-red-400 transition-all select-none cursor-pointer font-normal text-sm;
         }
         .moreInfo {
-          @apply underline text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
+          @apply underline hover:no-underline transition-all active:text-[#3485FF] text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
           .modal {
             @apply flex justify-center bg-[rgb(0,0,0,0.40)] w-full h-[145px] scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest px-3;
           }
@@ -46,6 +46,6 @@
     }
   }
   .pagination {
-    @apply flex justify-end pr-16 pt-20 select-none;
+    @apply flex justify-end pr-24 absolute right-0 bottom-14 select-none;
   }
 }

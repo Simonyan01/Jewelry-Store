@@ -1,11 +1,11 @@
-import { selectCollections, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCollections } from "../../../../../features/collections/CollectionSlice";
+import { selectCollections, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCollections, switchToActiveHeart, selectActiveHeart } from "../../../../../features/collections/CollectionSlice";
 import { postToWishlist } from "../../../../../features/wishlist/WishListSlice";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 // import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
-// import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,13 +24,11 @@ const CollectionSlider = () => {
     const modalSrc = useSelector(selectModalSrc);
     const activeLink = useSelector(selectActiveLink);
     const collections = useSelector(selectCollections);
-    // const wishlist = useSelector(selectWishlist)
+    const activeHeart = useSelector(selectActiveHeart)
 
     useEffect(() => {
         dispatch(getCollections())
     }, [dispatch])
-
-    // const someElem = collections.filter(el => el.id === wishlist.id)
 
     return (
         <>
@@ -62,20 +60,21 @@ const CollectionSlider = () => {
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-
-                                            {/* <FavoriteIcon
+                                            {activeHeart === id ?
+                                                <FavoriteIcon
                                                     className={styles.favoriteIcon}
                                                     onClick={() => {
-                                                        dispatch(switchToActive(null))
+                                                        dispatch(switchToActiveHeart(null))
                                                     }}
-                                                /> : */}
-                                            <FavoriteBorderSharpIcon
-                                                className={styles.sharpIcon}
-                                                onClick={() => {
-                                                    dispatch(postToWishlist({ price, title, img, additional }))
-                                                    dispatch(switchToActive(id))
-                                                }}
-                                            />
+                                                /> :
+                                                <FavoriteBorderSharpIcon
+                                                    className={styles.sharpIcon}
+                                                    onClick={() => {
+                                                        dispatch(postToWishlist({ price, title, img, additional })) &&
+                                                            dispatch(switchToActiveHeart(id))
+                                                    }}
+                                                />
+                                            }
                                             <img
                                                 src={img}
                                                 alt={title}

@@ -3,6 +3,7 @@ import wishlistReducer from "../features/wishlist/WishListSlice"
 import headerReducer from "../features/header/HeaderSlice"
 import charmReducer from "../features/charms/CharmSlice"
 import boardReducer from "../features/board/BoardSlice"
+import bagReducer from "../features/bag/BagSlice"
 import { configureStore } from "@reduxjs/toolkit"
 
 export const store = configureStore({
@@ -12,5 +13,6 @@ export const store = configureStore({
     header: headerReducer,
     charms: charmReducer,
     board: boardReducer,
+    bag: bagReducer,
   },
 })

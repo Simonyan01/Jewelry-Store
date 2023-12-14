@@ -1,5 +1,6 @@
-import { deleteInWishlist, getWishlist, seeMoreInfo, selectActiveLink, selectError, selectLoading, selectModalSrc, selectWishlist, switchToActive } from "../../../features/wishlist/WishListSlice"
+import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, setCurrentPage, switchToActive } from "../../../features/wishlist/WishListSlice"
 import { Box, CircularProgress, Fade, Pagination, Stack } from "@mui/material"
+import { getBagList, postToBagList } from "../../../features/bag/BagSlice"
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"
 import { paginataionStyles } from "./styles"
@@ -9,15 +10,19 @@ import { useEffect } from "react"
 const WishList = () => {
   const dispatch = useDispatch()
 
-  const error = useSelector(selectError);
-  const loading = useSelector(selectLoading);
-  const modalSrc = useSelector(selectModalSrc);
-  const wishlist = useSelector(selectWishlist);
-  const activeLink = useSelector(selectActiveLink);
+  const { error, loading, modalSrc, wishlist, activeLink, currentPage, itemsPerPage } = useSelector(selectWishlistState)
+
+  const totalPages = Math.ceil(wishlist.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const handlePagination = (event, newPage) => {
+    dispatch(setCurrentPage(newPage))
+  }
 
   useEffect(() => {
     dispatch(getWishlist())
-  }, [dispatch])
+  }, [dispatch, currentPage])
 
   return (
     <>
@@ -25,7 +30,7 @@ const WishList = () => {
         error ? <p className={styles.errorText}>Data not found.</p> :
           <Box className={styles.mainContainer}>
             <Box className={styles.wishlistContainer}>
-              {wishlist?.map(({ id, title, img, price, additional }) => (
+              {wishlist?.slice(startIndex, endIndex).map(({ id, title, img, price, additional }) => (
                 <Box key={id} className={`${activeLink === id && styles.active}`}>
                   <Box className={styles.card}>
                     <FavoriteIcon
@@ -55,7 +60,12 @@ const WishList = () => {
                       </span>
                     </Box>
                     <Box className={styles.additional}>
-                      <Box className={styles.addToBag}>Add To Bag</Box>
+                      <Box onClick={() => {
+                        if (dispatch(postToBagList({ title, img, price }))) {
+                          dispatch(getBagList())
+                        }
+                      }
+                      } className={styles.addToBag}>Add To Bag</Box>
                       <Box
                         className={styles.moreInfo}
                         onClick={() => dispatch(seeMoreInfo(id))}
@@ -81,15 +91,17 @@ const WishList = () => {
             </Box>
             <Box className={styles.pagination}>
               <Pagination
+                onChange={handlePagination}
                 sx={paginataionStyles}
+                page={currentPage}
+                count={totalPages}
+                boundaryCount={2}
                 defaultValue={5}
                 siblingCount={0}
-                boundaryCount={2}
-                count={10}
-                color="primary"
                 size="large"
-                variant="outlined"
                 shape="rounded"
+                color="primary"
+                variant="outlined"
               />
             </Box>
           </Box>

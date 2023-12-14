@@ -8,6 +8,7 @@ const beltBoardURL = "http://localhost:8080/belt_board"
 
 export const selectCollections = state => state.collections.collection
 export const selectActiveLink = state => state.collections.activeLink
+export const selectActiveHeart = state => state.collections.activeHeart
 export const selectModalSrc = state => state.collections.modalSrc
 export const selectLoading = state => state.collections.loading
 export const selectError = state => state.collections.error
@@ -46,6 +47,7 @@ export const postCollections = createAsyncThunk(
 
 const initialState = {
     activeLink: null,
+    activeHeart: null,
     modalSrc: false,
     collection: [],
     loading: false,
@@ -58,6 +60,9 @@ const collectionSlice = createSlice({
     reducers: {
         switchToActive: (state, action) => {
             state.activeLink = action.payload
+        },
+        switchToActiveHeart: (state, action) => {
+            state.activeHeart = action.payload
         },
         seeMoreInfo: (state, action) => {
             state.modalSrc = action.payload
@@ -80,6 +85,6 @@ const collectionSlice = createSlice({
     },
 })
 
-export const { switchToActive, seeMoreInfo } = collectionSlice.actions
+export const { switchToActive, seeMoreInfo, switchToActiveHeart } = collectionSlice.actions
 
 export default collectionSlice.reducer

@@ -2,84 +2,84 @@
   "collection": [
     {
       "id": 1,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/v.png",
       "additional": "See More"
     },
     {
       "id": 2,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/w.png",
       "additional": "See More"
     },
     {
       "id": 3,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/x.png",
       "additional": "See More"
     },
     {
       "id": 4,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More"
     },
     {
       "id": 5,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 6,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 7,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/v.png",
       "additional": "See More"
     },
     {
       "id": 8,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/w.png",
       "additional": "See More"
     },
     {
       "id": 9,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/x.png",
       "additional": "See More"
     },
     {
       "id": 10,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More"
     },
     {
       "id": 11,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 12,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
@@ -88,84 +88,84 @@
   "charm": [
     {
       "id": 1,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/v.png",
       "additional": "See More"
     },
     {
       "id": 2,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/w.png",
       "additional": "See More"
     },
     {
       "id": 3,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/x.png",
       "additional": "See More"
     },
     {
       "id": 4,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More"
     },
     {
       "id": 5,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 6,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 7,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/v.png",
       "additional": "See More"
     },
     {
       "id": 8,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/w.png",
       "additional": "See More"
     },
     {
       "id": 9,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/x.png",
       "additional": "See More"
     },
     {
       "id": 10,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More"
     },
     {
       "id": 11,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
     },
     {
       "id": 12,
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/u-3.png",
       "additional": "See More"
@@ -175,103 +175,187 @@
   "color_board": [
     {
       "id": 1,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Blue Mood",
       "img": "src/images/board/blue.png"
     },
     {
       "id": 2,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Brown Mood",
       "img": "src/images/board/brown.png"
     },
     {
       "id": 3,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Brown Mood",
       "img": "src/images/board/brown.png"
     },
     {
       "id": 4,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "White Mood",
       "img": "src/images/board/desert.png"
     },
     {
       "id": 5,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Yellow Mood",
       "img": "src/images/board/gold.png"
     },
     {
       "id": 6,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Black Mood",
       "img": "src/images/board/carbon.png"
     },
     {
       "id": 7,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Green Mood",
       "img": "src/images/board/green.png"
     },
     {
       "id": 8,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Red Mood",
       "img": "src/images/board/red.png"
     },
     {
       "id": 9,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Brown Mood",
       "img": "src/images/board/brown.png"
     },
     {
       "id": 10,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Yellow Mood",
       "img": "src/images/board/brown.png"
     },
     {
       "id": 11,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "White Mood",
       "img": "src/images/board/desert.png"
     },
     {
       "id": 12,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Yellow Mood",
       "img": "src/images/board/gold.png"
     },
     {
       "id": 13,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Black Mood",
       "img": "src/images/board/carbon.png"
     },
     {
       "id": 14,
-      "price": "200.00$",
+      "price": "200.00",
       "title": "Green Mood",
       "img": "src/images/board/green.png"
     }
   ],
   "wishlist": [
     {
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More",
       "id": 1
     },
     {
-      "price": "499.00$",
+      "price": "499.00",
       "title": "Custom Name Bracelet",
       "img": "src/images/slider/detail-13.png",
       "additional": "See More",
+      "id": 2
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/x.png",
+      "additional": "See More",
+      "id": 3
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/detail-13.png",
+      "additional": "See More",
+      "id": 4
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/u-3.png",
+      "additional": "See More",
       "id": 5
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/u-3.png",
+      "additional": "See More",
+      "id": 6
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/x.png",
+      "additional": "See More",
+      "id": 7
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/x.png",
+      "additional": "See More",
+      "id": 8
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/w.png",
+      "additional": "See More",
+      "id": 9
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/v.png",
+      "additional": "See More",
+      "id": 10
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/v.png",
+      "additional": "See More",
+      "id": 11
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/x.png",
+      "additional": "See More",
+      "id": 12
+    }
+  ],
+  "bag": [
+    {
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/detail-13.png",
+      "price": "499.00",
+      "id": 1
+    },
+    {
+      "title": "Custom Name Bracelet",
+      "img": "src/images/slider/detail-13.png",
+      "price": "499.00",
+      "id": 10
     }
   ]
 }

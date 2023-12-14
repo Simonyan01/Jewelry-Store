@@ -5,19 +5,19 @@ const wishlistURL = "http://localhost:8080/wishlist"
 
 // Selected States
 
-export const selectActiveLink = state => state.wishlist.activeLink
-export const selectModalSrc = state => state.wishlist.modalSrc
-export const selectWishlist = state => state.wishlist.wishlist
-export const selectLoading = state => state.wishlist.loading
-export const selectError = state => state.wishlist.error
+export const selectWishlistState = state => state.wishlist
 
 // GET METHOD
 
 export const getWishlist = createAsyncThunk(
     "wishlist/getWishlist",
-    async (_, thunkAPI) => {
+    async (page, thunkAPI) => {
         try {
-            const res = await axios.get(wishlistURL)
+            const res = await axios.get(wishlistURL, {
+                params: {
+                    _page: page,
+                },
+            })
             return res.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
@@ -60,8 +60,10 @@ export const deleteInWishlist = createAsyncThunk(
 )
 
 const initialState = {
+    itemsPerPage: 12,
     activeLink: null,
     modalSrc: false,
+    currentPage: 1,
     loading: false,
     wishlist: [],
     error: null,
@@ -76,9 +78,13 @@ const wishlistSlice = createSlice({
         },
         seeMoreInfo: (state, action) => {
             state.modalSrc = action.payload
-        }
+        },
+        setCurrentPage: (state, action) => {
+            state.currentPage = action.payload;
+        },
     },
     extraReducers: (builder) => {
+        // GET
         builder
             .addCase(getWishlist.pending, (state) => {
                 state.loading = true
@@ -92,6 +98,7 @@ const wishlistSlice = createSlice({
                 state.error = action.error.message;
                 state.loading = false;
             })
+            // DELETE
             .addCase(deleteInWishlist.pending, (state) => {
                 state.loading = true
             })
@@ -107,6 +114,6 @@ const wishlistSlice = createSlice({
     },
 })
 
-export const { switchToActive, seeMoreInfo } = wishlistSlice.actions
+export const { switchToActive, seeMoreInfo, setCurrentPage } = wishlistSlice.actions
 
 export default wishlistSlice.reducer
