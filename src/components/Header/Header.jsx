@@ -1,5 +1,5 @@
+import { selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
-import { selectActiveLink, selectLanguageBar, toggleBar } from "../../features/header/HeaderSlice"
 import { switchToActive } from "../../features/header/HeaderSlice"
 import { Box, Button, Menu, MenuItem } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
@@ -10,8 +10,7 @@ import { navbar } from "./models"
 const Header = () => {
     const dispatch = useDispatch()
 
-    const activeLink = useSelector(selectActiveLink)
-    const languageBar = useSelector(selectLanguageBar)
+    const { activeLink, languageBar } = useSelector(selectHeaderState)
 
     const handleClose = (prev) => dispatch(toggleBar(!prev))
 

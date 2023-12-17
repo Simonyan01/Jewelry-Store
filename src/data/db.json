@@ -332,14 +332,14 @@
     {
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/v.png",
+      "img": "src/images/slider/detail-13.png",
       "additional": "See More",
       "id": 11
     },
     {
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/x.png",
+      "img": "src/images/slider/u-3.png",
       "additional": "See More",
       "id": 12
     }
@@ -350,12 +350,6 @@
       "img": "src/images/slider/detail-13.png",
       "price": "499.00",
       "id": 1
-    },
-    {
-      "title": "Custom Name Bracelet",
-      "img": "src/images/slider/detail-13.png",
-      "price": "499.00",
-      "id": 10
     }
   ]
 }

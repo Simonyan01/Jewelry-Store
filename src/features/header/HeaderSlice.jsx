@@ -2,8 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Selected States
 
-export const selectActiveLink = state => state.header.activeLink
-export const selectLanguageBar = state => state.header.languageBar
+export const selectHeaderState = state => state.header
 
 const initialState = {
     activeLink: null,

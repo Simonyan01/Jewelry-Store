@@ -1,5 +1,4 @@
-import { changeBeltColour, deleteBeltBoardItem, getBeltBoard, selectBeltColour, selectBox, selectColorBoard, switchToActive } from "../../../../../features/board/BoardSlice";
-import { selectBoard } from "../../../../../features/board/BoardSlice";
+import { changeBeltColour, deleteBeltBoardItem, getBeltBoard, selectBoardState, switchToActive } from "../../../../../features/board/BoardSlice";
 import { useDispatch, useSelector, } from "react-redux";
 import belt from "../../../../../images/board/belt.png"
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -10,10 +9,7 @@ import { useEffect } from "react";
 const BeltBoard = () => {
     const dispatch = useDispatch()
 
-    const box = useSelector(selectBox)
-    const beltBoard = useSelector(selectBoard);
-    const isPainted = useSelector(selectBeltColour)
-    const colorBoard = useSelector(selectColorBoard);
+    const { beltBoard, box, isPainted, colorBoard } = useSelector(selectBoardState);
 
     useEffect(() => {
         dispatch(getBeltBoard())

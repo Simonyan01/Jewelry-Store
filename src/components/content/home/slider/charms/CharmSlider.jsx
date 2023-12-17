@@ -1,8 +1,9 @@
-import { selectCharms, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCharms, postCharms } from "../../../../../features/charms/CharmSlice";
+import { selectCharms, switchToActive, seeMoreInfo, getCharms, switchToActiveHeart, postCharms } from "../../../../../features/charms/CharmSlice";
+import { postToWishlist } from "../../../../../features/wishlist/WishListSlice";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 import { getBeltBoard } from "../../../../../features/board/BoardSlice";
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -18,11 +19,7 @@ const CharmSlider = () => {
     const swiperRef = useRef()
     const dispatch = useDispatch()
 
-    const error = useSelector(selectError);
-    const charms = useSelector(selectCharms);
-    const loading = useSelector(selectLoading);
-    const modalSrc = useSelector(selectModalSrc);
-    const activeLink = useSelector(selectActiveLink);
+    const { charm, activeHeart, activeLink, modalSrc, loading, error } = useSelector(selectCharms);
 
     useEffect(() => {
         dispatch(getCharms())
@@ -53,24 +50,25 @@ const CharmSlider = () => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper select-none"
                         >
-                            {charms?.map(({ id, price, title, img, additional }) => (
+                            {charm?.map(({ id, price, title, img, additional }) => (
                                 <SwiperSlide key={id} className="h-72">
                                     <Box
                                         ref={swiperRef}
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-                                            {activeLink === id ?
+                                            {activeHeart === id ?
                                                 <FavoriteIcon
                                                     className={styles.favoriteIcon}
                                                     onClick={() => {
-                                                        dispatch(switchToActive(null))
+                                                        dispatch(switchToActiveHeart(null))
                                                     }}
                                                 /> :
                                                 <FavoriteBorderSharpIcon
                                                     className={styles.sharpIcon}
                                                     onClick={() => {
-                                                        dispatch(switchToActive(id))
+                                                        dispatch(postToWishlist({ price, title, img, additional })) &&
+                                                            dispatch(switchToActiveHeart(id))
                                                     }}
                                                 />
                                             }

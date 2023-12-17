@@ -1,7 +1,7 @@
-import { selectCollections, selectLoading, selectActiveLink, switchToActive, selectError, selectModalSrc, seeMoreInfo, getCollections, switchToActiveHeart, selectActiveHeart } from "../../../../../features/collections/CollectionSlice";
+import { selectCollections, switchToActive, seeMoreInfo, getCollections, switchToActiveHeart, postCollections } from "../../../../../features/collections/CollectionSlice";
 import { postToWishlist } from "../../../../../features/wishlist/WishListSlice";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
-// import { getBeltBoard } from "../../../../../features/board/BoardSlice";
+import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
@@ -11,20 +11,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from "./collection.module.scss"
 import { useEffect, useRef } from "react";
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import 'swiper/css';
 
 const CollectionSlider = () => {
     const swiperRef = useRef()
     const dispatch = useDispatch()
 
-    const error = useSelector(selectError);
-    const loading = useSelector(selectLoading);
-    const modalSrc = useSelector(selectModalSrc);
-    const activeLink = useSelector(selectActiveLink);
-    const collections = useSelector(selectCollections);
-    const activeHeart = useSelector(selectActiveHeart)
+    const { collection, activeHeart, activeLink, modalSrc, loading, error } = useSelector(selectCollections);
 
     useEffect(() => {
         dispatch(getCollections())
@@ -53,7 +48,7 @@ const CollectionSlider = () => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper select-none"
                         >
-                            {collections?.map(({ id, title, img, price, additional }) => (
+                            {collection?.map(({ id, title, img, price, additional }) => (
                                 <SwiperSlide key={id} className="h-72">
                                     <Box
                                         ref={swiperRef}
@@ -82,10 +77,10 @@ const CollectionSlider = () => {
                                                 onClick={() => {
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
-                                                    // dispatch(postCollections({ price, title, img })) &&
-                                                    //     setTimeout(() => dispatch(getBeltBoard()), 700)
-                                                    // }
-                                                }}
+                                                    dispatch(postCollections({ price, title, img })) &&
+                                                        setTimeout(() => dispatch(getBeltBoard()), 700)
+                                                }
+                                                }
                                             />
                                             <Box className={styles.description}>
                                                 <span className={styles.cardName}>
