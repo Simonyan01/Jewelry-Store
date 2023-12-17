@@ -16,9 +16,9 @@ export const getWishlist = createAsyncThunk(
             const res = await axios.get(wishlistURL, {
                 params: {
                     _page: page,
-                },
+                }
             })
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to get wishlist"
@@ -34,8 +34,8 @@ export const postToWishlist = createAsyncThunk(
     async (req, thunkAPI) => {
         try {
             const res = await axios.post(wishlistURL, req)
-            return res.data
-        } catch (err) {
+            return res?.data
+        } catch (err) { 
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to post wishlist"
             )
@@ -50,7 +50,7 @@ export const deleteInWishlist = createAsyncThunk(
     async (id, thunkAPI) => {
         try {
             const res = await axios.delete(`${wishlistURL}/${id}`)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to post wishlist"

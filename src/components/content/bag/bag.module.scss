@@ -1,0 +1,39 @@
+.mainContainer {
+  @apply grid place-items-center pt-6 bg-[url('src/images/bag/main.png')] bg-cover bg-center bg-gray-800 bg-no-repeat min-h-screen text-slate-200 w-full select-none relative;
+  .subContainer {
+    @apply bg-[#3E4148] h-[500px] rounded-t-xl w-[900px] shadow-primaryBoxShadow overflow-x-hidden overflow-y-auto;
+    .clearIcon {
+      @apply float-right m-[5.5px] text-[#B0B0B0] cursor-pointer;
+    }
+    .bagItem {
+      @apply flex items-center py-6 px-6 ;
+      .trashIcon {
+        @apply cursor-pointer opacity-60 pr-8 hover:opacity-100 hover:scale-125 transition-all;
+      }
+      .bagItemTitle {
+        @apply pr-8 font-primaryFont font-light tracking-wider;
+      }
+      .bagImg {
+        @apply h-12 pr-8;
+      }
+      .counter {
+        @apply flex justify-center items-center pl-10;
+        .calculate {
+          @apply rounded-[100px] cursor-pointer bg-[#363636] text-white hover:scale-[.60] transition-all w-[1px] grid h-16 place-items-center text-4xl py-[10px] px-[30px] font-normal scale-[.45];
+        }
+        .initialNumber {
+          @apply text-xl font-normal font-primaryFont;
+        }
+      }
+      .bagItemPrice {
+        @apply text-base relative tracking-wider left-12 font-primaryFont;
+      }
+      .bagTotalPrice {
+        @apply text-xl relative tracking-wider left-24 font-primaryFont;
+      }
+    }
+    .line {
+      @apply h-[1.5px] bg-gray-500 w-full;
+    }
+  }
+}

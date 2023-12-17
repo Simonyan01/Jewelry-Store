@@ -6,11 +6,7 @@ const beltBoardURL = "http://localhost:8080/belt_board"
 
 // Selected States
 
-export const selectActiveLink = state => state.charms.activeLink
-export const selectModalSrc = state => state.charms.modalSrc
-export const selectLoading = state => state.charms.loading
-export const selectCharms = state => state.charms.charm
-export const selectError = state => state.charms.error
+export const selectCharms = state => state.charms
 
 // GET METHOD
 
@@ -19,7 +15,7 @@ export const getCharms = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const res = await axios.get(charmURL)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to get charms")
         }
@@ -33,7 +29,7 @@ export const postCharms = createAsyncThunk(
     async (req, thunkAPI) => {
         try {
             const res = await axios.post(beltBoardURL, req)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to post charms")
         }
@@ -41,6 +37,7 @@ export const postCharms = createAsyncThunk(
 )
 
 const initialState = {
+    activeHeart: null,
     activeLink: null,
     modalSrc: false,
     loading: false,
@@ -54,6 +51,9 @@ const charmSlice = createSlice({
     reducers: {
         switchToActive: (state, action) => {
             state.activeLink = action.payload
+        },
+        switchToActiveHeart: (state, action) => {
+            state.activeHeart = action.payload
         },
         seeMoreInfo: (state, action) => {
             state.modalSrc = action.payload
@@ -76,6 +76,6 @@ const charmSlice = createSlice({
     },
 })
 
-export const { switchToActive, seeMoreInfo } = charmSlice.actions
+export const { switchToActive, seeMoreInfo, switchToActiveHeart } = charmSlice.actions
 
 export default charmSlice.reducer

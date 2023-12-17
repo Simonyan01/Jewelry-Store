@@ -6,12 +6,7 @@ const beltBoardURL = "http://localhost:8080/belt_board"
 
 // Selected States
 
-export const selectCollections = state => state.collections.collection
-export const selectActiveLink = state => state.collections.activeLink
-export const selectActiveHeart = state => state.collections.activeHeart
-export const selectModalSrc = state => state.collections.modalSrc
-export const selectLoading = state => state.collections.loading
-export const selectError = state => state.collections.error
+export const selectCollections = state => state.collections
 
 // GET METHOD
 
@@ -20,7 +15,7 @@ export const getCollections = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const res = await axios.get(collectionURL)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to get collections"
@@ -36,7 +31,7 @@ export const postCollections = createAsyncThunk(
     async (req, thunkAPI) => {
         try {
             const res = await axios.post(beltBoardURL, req)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to post collections"
@@ -46,11 +41,11 @@ export const postCollections = createAsyncThunk(
 )
 
 const initialState = {
-    activeLink: null,
     activeHeart: null,
+    activeLink: null,
     modalSrc: false,
-    collection: [],
     loading: false,
+    collection: [],
     error: null,
 }
 

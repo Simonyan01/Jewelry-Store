@@ -6,11 +6,7 @@ const beltBoardURL = "http://localhost:8080/belt_board"
 
 // Selected States
 
-export const selectColorBoard = state => state.board.colorBoard
-export const selectActiveLink = state => state.board.activeLink
-export const selectBeltColour = state => state.board.isPainted
-export const selectBoard = state => state.board.beltBoard
-export const selectBox = state => state.board.box
+export const selectBoardState = state => state.board
 
 // GET METHOD
 
@@ -19,7 +15,7 @@ export const getColorBoard = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const res = await axios.get(colourBoardURL)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to get color board"
@@ -33,7 +29,7 @@ export const getBeltBoard = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const res = await axios.get(beltBoardURL)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to get belt board")
         }
@@ -47,7 +43,7 @@ export const deleteBeltBoardItem = createAsyncThunk(
     async (id, thunkAPI) => {
         try {
             const res = await axios.delete(`${beltBoardURL}/${id}`)
-            return res.data
+            return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to delete belt board item"

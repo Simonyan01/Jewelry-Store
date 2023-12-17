@@ -1,6 +1,6 @@
 import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, setCurrentPage, switchToActive } from "../../../features/wishlist/WishListSlice"
 import { Box, CircularProgress, Fade, Pagination, Stack } from "@mui/material"
-import { getBagList, postToBagList } from "../../../features/bag/BagSlice"
+import { postToBagList } from "../../../features/bag/BagSlice"
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"
 import { paginataionStyles } from "./styles"
@@ -15,10 +15,6 @@ const WishList = () => {
   const totalPages = Math.ceil(wishlist.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-
-  const handlePagination = (event, newPage) => {
-    dispatch(setCurrentPage(newPage))
-  }
 
   useEffect(() => {
     dispatch(getWishlist())
@@ -37,9 +33,8 @@ const WishList = () => {
                       className={styles.favoriteIcon}
                       onClick={() => {
                         dispatch(switchToActive(null))
-                        if (dispatch(deleteInWishlist(id))) {
+                        dispatch(deleteInWishlist(id)) &&
                           dispatch(getWishlist())
-                        }
                       }}
                     />
                     <img
@@ -61,9 +56,7 @@ const WishList = () => {
                     </Box>
                     <Box className={styles.additional}>
                       <Box onClick={() => {
-                        if (dispatch(postToBagList({ title, img, price }))) {
-                          dispatch(getBagList())
-                        }
+                        dispatch(postToBagList({ title, img, price }))
                       }
                       } className={styles.addToBag}>Add To Bag</Box>
                       <Box
@@ -91,17 +84,17 @@ const WishList = () => {
             </Box>
             <Box className={styles.pagination}>
               <Pagination
-                onChange={handlePagination}
+                onChange={(_, newPage) => dispatch(setCurrentPage(newPage))}
                 sx={paginataionStyles}
                 page={currentPage}
                 count={totalPages}
                 boundaryCount={2}
                 defaultValue={5}
                 siblingCount={0}
-                size="large"
-                shape="rounded"
-                color="primary"
                 variant="outlined"
+                color="primary"
+                shape="rounded"
+                size="large"
               />
             </Box>
           </Box>
