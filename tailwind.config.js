@@ -26,7 +26,7 @@ export default {
       },
       transitionDuration: {
         DEFAULT: "350ms",
-      }
+      },
     },
   },
   plugins: [],

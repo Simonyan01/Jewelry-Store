@@ -20,12 +20,12 @@ const headerSlice = createSlice({
         toggleBar: (state, action) => {
             state.languageBar = action.payload
         },
-        changeLanguage: (state, action) => {
+        changeLanguageType: (state, action) => {
             state.language = action.payload
         },
     }
 })
 
-export const { switchToActive, toggleBar, changeLanguage } = headerSlice.actions
+export const { switchToActive, toggleBar, changeLanguageType } = headerSlice.actions
 
 export default headerSlice.reducer

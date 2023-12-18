@@ -1,9 +1,9 @@
-import { changeLanguage, selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
+import { changeLanguageType, selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
 import { switchToActive } from "../../features/header/HeaderSlice"
 import { Box, Button, Menu, MenuItem, } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next"
 import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import { navbar } from "./models"
@@ -16,9 +16,13 @@ const lngs = {
 
 const Header = () => {
     const dispatch = useDispatch()
-    const { i18n } = useTranslation();
+    // const { i18n } = useTranslation()
 
     const { activeLink, languageBar, language } = useSelector(selectHeaderState)
+
+    // const changeLanguage = (language) => {
+    //     i18n.changeLanguage(language);
+    // };
 
     const handleClose = (prev) => dispatch(toggleBar(!prev))
 
@@ -44,13 +48,14 @@ const Header = () => {
                 <Menu
                     color="black"
                     anchorEl={languageBar}
-                    open={languageBar}
                     onClose={handleClose}
+                    open={languageBar}
+                    value={language}
                 >
                     {Object.keys(lngs).map((lng) => (
                         <MenuItem key={lng} onClick={() => {
-                            i18n.changeLanguage(lng)
-                            dispatch(changeLanguage(lng))
+                            // changeLanguage(lng)
+                            dispatch(changeLanguageType(lng))
                         }}>
                             {lngs[lng].text}
                         </MenuItem>

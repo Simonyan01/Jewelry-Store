@@ -87,7 +87,7 @@ const CollectionSlider = () => {
                                                     {title}
                                                 </span>
                                                 <span className={styles.cardPrice}>
-                                                    {price}
+                                                    {price} $
                                                 </span>
                                             </Box>
                                             <Box

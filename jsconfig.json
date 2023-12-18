@@ -7,10 +7,8 @@
     "paths": {
       "components/*": ["components/*"],
       "features/*": ["features/*"],
-      // "collections/*": ["features/collections/*"],
       "assets/*": ["assets/*"],
-      "routes/*": ["routes/*"],
-      // "content/*": ["content/*"]
+      "routes/*": ["routes/*"]
     }
   },
   "include": ["./*"],

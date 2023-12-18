@@ -1,34 +1,21 @@
-import i18n from "i18next"
+import enTranslation from "./locales/en/translation.json"
+import ruTranslation from "./locales/ru/translation.json"
+import amTranslation from "./locales/am/translation.json"
 import { initReactI18next } from "react-i18next"
-import LanguageDetector from "i18next-browser-languagedetector"
+import i18n from "i18next"
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    debug: true,
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
-    },
-    resources: {
-      en: {
-        translation: {
-          description: {
-            part1: "Edit <1>src/App.js</1> and save to reload.",
-            part2: "Learn React",
-          },
-        },
-      },
-      de: {
-        translation: {
-          description: {
-            part1: "Ändere <1>src/App.js</1> und speichere um neu zu laden.",
-            part2: "Lerne React",
-          },
-        },
-      },
-    },
-  })
+i18n.use(initReactI18next).init({
+  debug: true,
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+  resources: {
+    en: { translation: { enTranslation } },
+    ru: { translation: { ruTranslation } },
+    am: { translation: { amTranslation } },
+  },
+})
 
 export default i18n
