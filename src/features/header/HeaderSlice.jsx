@@ -6,7 +6,8 @@ export const selectHeaderState = state => state.header
 
 const initialState = {
     activeLink: null,
-    languageBar: false
+    languageBar: false,
+    language: "EN"
 }
 
 const headerSlice = createSlice({
@@ -18,10 +19,13 @@ const headerSlice = createSlice({
         },
         toggleBar: (state, action) => {
             state.languageBar = action.payload
-        }
+        },
+        changeLanguage: (state, action) => {
+            state.language = action.payload
+        },
     }
 })
 
-export const { switchToActive, toggleBar } = headerSlice.actions
+export const { switchToActive, toggleBar, changeLanguage } = headerSlice.actions
 
 export default headerSlice.reducer
