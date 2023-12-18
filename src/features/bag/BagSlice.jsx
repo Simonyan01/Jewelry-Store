@@ -62,13 +62,19 @@ const bagSlice = createSlice({
     name: "bag list",
     initialState,
     reducers: {
-        decrement: (state) => {
-            if (state.value > 1) {
-                state.value -= 1;
+        decrement: (state, action) => {
+            const { id } = action.payload;
+            const itemToUpdate = state.bag.find(item => item.id === id);
+            if (itemToUpdate.value > 1) {
+                itemToUpdate.value -= 1;
             }
         },
-        increment: (state) => {
-            state.value += 1
+        increment: (state, action) => {
+            const { id } = action.payload;
+            const itemToUpdate = state.bag.find(item => item.id === id);
+            if (itemToUpdate) {
+                itemToUpdate.value += 1;
+            }
         }
     },
     extraReducers: (builder) => {
@@ -99,13 +105,6 @@ const bagSlice = createSlice({
                 state.error = action.error.message;
                 state.loading = false;
             })
-        // COUNTER
-        // .addCase(increment, (state, action) => {
-        //     state.bag = action.payload
-        // })
-        // .addCase(decrement, (state, action) => {
-        //     state.bag = action.payload
-        // });
     },
 })
 

@@ -88,7 +88,7 @@ const CharmSlider = () => {
                                                     {title}
                                                 </span>
                                                 <span className={styles.cardPrice}>
-                                                    {price}
+                                                    {price} $
                                                 </span>
                                             </Box>
                                             <Box

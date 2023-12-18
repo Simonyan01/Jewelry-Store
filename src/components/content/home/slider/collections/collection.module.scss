@@ -30,7 +30,7 @@
       }
     }
     .additional {
-      @apply underline float-right text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
+      @apply underline hover:no-underline float-right text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
       .modal {
         @apply flex items-center justify-center bg-[rgb(0,0,0,0.40)] w-full h-full scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest overflow-x-auto px-3;
       }
