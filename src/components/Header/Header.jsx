@@ -1,16 +1,24 @@
-import { selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
+import { changeLanguage, selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
 import { switchToActive } from "../../features/header/HeaderSlice"
-import { Box, Button, Menu, MenuItem } from "@mui/material"
+import { Box, Button, Menu, MenuItem, } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
+import { useTranslation } from "react-i18next";
 import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import { navbar } from "./models"
 
+const lngs = {
+    en: { text: 'EN' },
+    ru: { text: 'RU' },
+    hy: { text: 'AM' },
+};
+
 const Header = () => {
     const dispatch = useDispatch()
+    const { i18n } = useTranslation();
 
-    const { activeLink, languageBar } = useSelector(selectHeaderState)
+    const { activeLink, languageBar, language } = useSelector(selectHeaderState)
 
     const handleClose = (prev) => dispatch(toggleBar(!prev))
 
@@ -31,7 +39,7 @@ const Header = () => {
                     sx={{ color: "whitesmoke" }}
                     onClick={(e) => dispatch(toggleBar(e.currentTarget))}
                 >
-                    EN {!languageBar ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+                    {language} {!languageBar ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
                 </Button>
                 <Menu
                     color="black"
@@ -39,8 +47,14 @@ const Header = () => {
                     open={languageBar}
                     onClose={handleClose}
                 >
-                    <MenuItem>RU</MenuItem>
-                    <MenuItem>AM</MenuItem>
+                    {Object.keys(lngs).map((lng) => (
+                        <MenuItem key={lng} onClick={() => {
+                            i18n.changeLanguage(lng)
+                            dispatch(changeLanguage(lng))
+                        }}>
+                            {lngs[lng].text}
+                        </MenuItem>
+                    ))}
                 </Menu>
             </Box>
         </Box>
