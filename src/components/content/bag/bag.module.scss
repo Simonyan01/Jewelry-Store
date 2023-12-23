@@ -1,3 +1,6 @@
+.errorText {
+  @apply flex justify-center items-center min-h-full font-medium tracking-widest text-3xl text-slate-300 select-none ml-12;
+}
 .mainContainer {
   @apply grid place-items-center bg-[url('src/images/bag/main.png')] bg-cover bg-center bg-gray-800 bg-no-repeat min-h-screen text-slate-200 w-full select-none relative;
   .subContainer {
@@ -42,7 +45,7 @@
       @apply underline absolute mt-12 tracking-widest cursor-pointer active:text-red-600 text-primaryColor transition-all duration-200;
     }
     .orderButton {
-      @apply uppercase bg-primaryColor hover:bg-white hover:text-primaryColor transition-all float-right rounded-3xl py-1 px-11 font-medium relative top-12;
+      @apply uppercase bg-primaryColor hover:bg-white hover:text-primaryColor transition-all float-right rounded-3xl py-[0.35rem] px-11 font-medium relative top-12;
     }
     .orderPrice {
       @apply float-right mt-[3.3rem] mr-20 font-light tracking-wider;
@@ -50,8 +53,8 @@
   }
 }
 .allPrices {
-  @apply bg-[#202124] shadow-primaryBoxShadow sticky flex justify-center items-center w-full bottom-0 h-32;
+  @apply bg-[#202124] shadow-primaryBoxShadow sticky flex justify-center items-center w-full bottom-0 py-6 hover:pb-16 cursor-pointer transition-all;
   .allPricesButton {
-    @apply uppercase bg-primaryColor select-none hover:bg-white hover:text-primaryColor text-white font-semibold tracking-wider transition-all shadow-primaryBoxShadow float-right rounded-3xl py-2 px-20 mb-2;
+    @apply uppercase bg-primaryColor select-none hover:bg-white hover:text-primaryColor text-white font-semibold tracking-wider transition-all shadow-primaryBoxShadow float-right rounded-3xl py-2 px-20;
   }
 }

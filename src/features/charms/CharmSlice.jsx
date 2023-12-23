@@ -53,7 +53,13 @@ const charmSlice = createSlice({
             state.activeLink = action.payload
         },
         switchToActiveHeart: (state, action) => {
-            state.activeHeart = action.payload
+            const activeHeartId = action.payload
+
+            state.activeHeart = activeHeartId
+            state.charm = state.charm.map((item) => ({
+                ...item,
+                isChecked: item.id === activeHeartId ? !item.isChecked : item.isChecked,
+            }))
         },
         seeMoreInfo: (state, action) => {
             state.modalSrc = action.payload

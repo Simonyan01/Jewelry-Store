@@ -4,6 +4,7 @@ import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { postToBagList } from "../../../../../features/bag/BagSlice";
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -19,7 +20,7 @@ const CharmSlider = () => {
     const swiperRef = useRef()
     const dispatch = useDispatch()
 
-    const { charm, activeHeart, activeLink, modalSrc, loading, error } = useSelector(selectCharms);
+    const { charm, activeLink, modalSrc, loading, error } = useSelector(selectCharms);
 
     useEffect(() => {
         dispatch(getCharms())
@@ -50,24 +51,22 @@ const CharmSlider = () => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper select-none"
                         >
-                            {charm?.map(({ id, price, title, img, additional }) => (
+                            {charm?.map(({ id, price, title, img, additional, addToBag, isChecked }) => (
                                 <SwiperSlide key={id} className="h-72">
                                     <Box
                                         ref={swiperRef}
                                         className={`${activeLink === id && styles.active}`}
                                     >
                                         <Box className={styles.card}>
-                                            {activeHeart === id ?
+                                            {isChecked ?
                                                 <FavoriteIcon
                                                     className={styles.favoriteIcon}
-                                                    onClick={() => {
-                                                        dispatch(switchToActiveHeart(null))
-                                                    }}
+                                                    onClick={() => dispatch(switchToActiveHeart(null))}
                                                 /> :
                                                 <FavoriteBorderSharpIcon
                                                     className={styles.sharpIcon}
                                                     onClick={() => {
-                                                        dispatch(postToWishlist({ price, title, img, additional })) &&
+                                                        dispatch(postToWishlist({ price, title, img, additional, addToBag })) &&
                                                             dispatch(switchToActiveHeart(id))
                                                     }}
                                                 />
@@ -80,7 +79,7 @@ const CharmSlider = () => {
                                                     dispatch(switchToActive(id))
                                                     dispatch(seeMoreInfo(!modalSrc))
                                                     dispatch(postCharms({ price, title, img })) &&
-                                                        setTimeout(() => dispatch(getBeltBoard()), 700)
+                                                        setTimeout(() => dispatch(getBeltBoard()), 500)
                                                 }}
                                             />
                                             <Box className={styles.description}>
@@ -91,23 +90,31 @@ const CharmSlider = () => {
                                                     {price} $
                                                 </span>
                                             </Box>
-                                            <Box
-                                                className={styles.additional}
-                                                onClick={() => dispatch(seeMoreInfo(id))}
-                                            >
-                                                {additional}
-                                                {modalSrc === id &&
-                                                    <Fade in={modalSrc}>
-                                                        <Stack
-                                                            className={styles.modal}
-                                                            onClick={(e) => {
-                                                                e.stopPropagation()
-                                                                dispatch(seeMoreInfo(!modalSrc))
-                                                            }}
-                                                        > Awesome bracelet
-                                                        </Stack>
-                                                    </Fade>
-                                                }
+                                            <Box className={styles.additional}>
+                                                <Box
+                                                    className={styles.addToBag}
+                                                    onClick={() => dispatch(postToBagList({ title, img, price }))}
+                                                >
+                                                    {addToBag}
+                                                </Box>
+                                                <Box
+                                                    className={styles.moreInfo}
+                                                    onClick={() => dispatch(seeMoreInfo(id))}
+                                                >
+                                                    {additional}
+                                                    {modalSrc === id && (
+                                                        <Fade in={modalSrc}>
+                                                            <Stack
+                                                                className={styles.modal}
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation()
+                                                                    dispatch(seeMoreInfo(!modalSrc))
+                                                                }}
+                                                            > Awesome bracelet
+                                                            </Stack>
+                                                        </Fade>
+                                                    )}
+                                                </Box>
                                             </Box>
                                         </Box>
                                     </Box>

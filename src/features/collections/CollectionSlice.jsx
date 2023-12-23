@@ -57,7 +57,13 @@ const collectionSlice = createSlice({
             state.activeLink = action.payload
         },
         switchToActiveHeart: (state, action) => {
-            state.activeHeart = action.payload
+            const activeHeartId = action.payload
+
+            state.activeHeart = activeHeartId
+            state.collection = state.collection.map((item) => ({
+                ...item,
+                isChecked: item.id === activeHeartId ? !item.isChecked : item.isChecked,
+            }))
         },
         seeMoreInfo: (state, action) => {
             state.modalSrc = action.payload

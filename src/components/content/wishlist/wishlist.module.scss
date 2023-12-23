@@ -1,8 +1,5 @@
-.progress {
-  @apply relative top-0 left-2/4;
-}
 .errorText {
-  @apply grid place-items-center font-medium tracking-wider text-xl ml-12 text-slate-300 select-none min-h-screen text-center;
+  @apply grid place-items-center font-medium tracking-widest text-4xl text-slate-300 select-none ml-14 min-h-screen;
 }
 .mainContainer {
   @apply bg-[#2F333A] min-h-screen w-full text-slate-300;

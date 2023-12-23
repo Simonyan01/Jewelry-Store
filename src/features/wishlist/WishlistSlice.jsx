@@ -35,7 +35,7 @@ export const postToWishlist = createAsyncThunk(
         try {
             const res = await axios.post(wishlistURL, req)
             return res?.data
-        } catch (err) { 
+        } catch (err) {
             return thunkAPI.rejectWithValue(
                 err.message || "Failed to post wishlist"
             )
@@ -81,7 +81,7 @@ const wishlistSlice = createSlice({
         },
         setCurrentPage: (state, action) => {
             state.currentPage = action.payload;
-        },
+        }
     },
     extraReducers: (builder) => {
         // GET

@@ -30,9 +30,15 @@
       }
     }
     .additional {
-      @apply underline hover:no-underline float-right text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
-      .modal {
-        @apply flex items-center justify-center bg-[rgb(0,0,0,0.40)] w-full h-full scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest overflow-x-auto px-3;
+      @apply flex justify-between pt-3;
+      .addToBag {
+        @apply underline text-[#3485FF] hover:no-underline active:text-red-400 transition-all duration-150 select-none cursor-pointer font-normal text-sm;
+      }
+      .moreInfo {
+        @apply underline hover:no-underline transition-all active:text-[#3485FF] duration-100 text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
+        .modal {
+          @apply flex justify-center bg-[rgb(0,0,0,0.40)] w-full h-[145px] scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest px-3;
+        }
       }
     }
   }
@@ -43,6 +49,6 @@
     @apply text-[#B7B7B7] relative bottom-[3.9rem] left-6 cursor-pointer;
   }
   .active {
-    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] rounded-md border-activeCardBg transition-all pb-20;
+    @apply bg-activeCardBg shadow-primaryBoxShadow border-[9px] rounded-md border-activeCardBg transition-all pb-[5.5rem];
   }
 }
