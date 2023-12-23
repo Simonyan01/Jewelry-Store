@@ -1,9 +1,9 @@
-import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, setCurrentPage, switchToActive } from "../../../features/wishlist/WishListSlice"
-import { Box, Fade, Pagination, Stack } from "@mui/material"
+import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, switchToActive } from "../../../features/wishlist/WishListSlice"
 import { postToBagList } from "../../../features/bag/BagSlice"
+import WishlistPagination from "./pagination/Pagination"
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"
-import { paginataionStyles } from "./styles"
+import { Box, Fade, Stack } from "@mui/material"
 import styles from "./wishlist.module.scss"
 import { useEffect } from "react"
 
@@ -12,7 +12,6 @@ const WishList = () => {
 
   const { modalSrc, wishlist, activeLink, currentPage, itemsPerPage } = useSelector(selectWishlistState)
 
-  const totalPages = Math.ceil(wishlist.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
@@ -82,21 +81,7 @@ const WishList = () => {
               </Box>
             ))}
           </Box>
-          <Box className={styles.pagination}>
-            <Pagination
-              onChange={(_, newPage) => dispatch(setCurrentPage(newPage))}
-              sx={paginataionStyles}
-              page={currentPage}
-              count={totalPages}
-              boundaryCount={2}
-              defaultValue={5}
-              siblingCount={0}
-              variant="outlined"
-              color="primary"
-              shape="rounded"
-              size="large"
-            />
-          </Box>
+          <WishlistPagination />
         </Box>
       }
     </>

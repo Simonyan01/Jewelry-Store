@@ -33,7 +33,7 @@
         .moreInfo {
           @apply underline hover:no-underline transition-all active:text-[#3485FF] duration-100 text-[0.85rem] font-normal text-[#B0B0B0] select-none cursor-pointer;
           .modal {
-            @apply flex justify-center bg-[rgb(0,0,0,0.40)] w-full h-[145px] scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest px-3;
+            @apply flex justify-center bg-[rgb(0,0,0,0.40)] text-[#B0B0B0] w-full h-[145px] scale-100 absolute top-0 left-0 z-50 text-xl break-keep tracking-widest px-3;
           }
         }
       }
