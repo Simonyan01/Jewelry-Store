@@ -4,11 +4,11 @@ export const navbar = [
     {
         id: uuidv4(),
         path: "/",
-        title: "COMPOSET",
+        title: "composet",
     },
     {
         id: uuidv4(),
-        title: "Search",
+        title: "search",
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export const navbar = [
     },
     {
         id: uuidv4(),
-        title: "Wishlist",
+        title: "wishlist",
         path: "/wishlist",
         icon: (
             <svg
@@ -53,7 +53,7 @@ export const navbar = [
     },
     {
         id: uuidv4(),
-        title: "Bag",
+        title: "bag",
         path: "/bag",
         icon: (
             <svg
@@ -85,7 +85,7 @@ export const navbar = [
     },
     {
         id: uuidv4(),
-        title: "MY ACCOUNT",
+        title: "my_account",
         path: "/account",
         icon: "",
     }
