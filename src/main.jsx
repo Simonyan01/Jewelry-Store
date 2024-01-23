@@ -5,10 +5,13 @@ import { store } from "./app/store"
 import App from './App.jsx'
 import './i18n.js'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-)
+const root = document.getElementById('root')
+
+ReactDOM.createRoot(root)
+  .render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  )

@@ -4,7 +4,7 @@
       "id": 1,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/v.png",
+      "img": "src/assets/slider/v.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -13,7 +13,7 @@
       "id": 2,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/w.png",
+      "img": "src/assets/slider/w.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -22,7 +22,7 @@
       "id": 3,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/x.png",
+      "img": "src/assets/slider/x.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -31,7 +31,7 @@
       "id": 4,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/detail-13.png",
+      "img": "src/assets/slider/detail-13.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -40,7 +40,7 @@
       "id": 5,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -49,7 +49,7 @@
       "id": 6,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -58,7 +58,7 @@
       "id": 7,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/v.png",
+      "img": "src/assets/slider/v.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -67,7 +67,7 @@
       "id": 8,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/w.png",
+      "img": "src/assets/slider/w.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -76,7 +76,7 @@
       "id": 9,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/x.png",
+      "img": "src/assets/slider/x.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -85,7 +85,7 @@
       "id": 10,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/detail-13.png",
+      "img": "src/assets/slider/detail-13.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -94,7 +94,7 @@
       "id": 11,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -103,7 +103,7 @@
       "id": 12,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -114,7 +114,7 @@
       "id": 1,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/v.png",
+      "img": "src/assets/slider/v.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -123,7 +123,7 @@
       "id": 2,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/w.png",
+      "img": "src/assets/slider/w.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -132,7 +132,7 @@
       "id": 3,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/x.png",
+      "img": "src/assets/slider/x.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -141,7 +141,7 @@
       "id": 4,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/detail-13.png",
+      "img": "src/assets/slider/detail-13.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -150,7 +150,7 @@
       "id": 5,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -159,7 +159,7 @@
       "id": 6,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -168,7 +168,7 @@
       "id": 7,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/v.png",
+      "img": "src/assets/slider/v.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -177,7 +177,7 @@
       "id": 8,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/w.png",
+      "img": "src/assets/slider/w.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -186,7 +186,7 @@
       "id": 9,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/x.png",
+      "img": "src/assets/slider/x.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -195,7 +195,7 @@
       "id": 10,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/detail-13.png",
+      "img": "src/assets/slider/detail-13.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -204,7 +204,7 @@
       "id": 11,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -213,7 +213,7 @@
       "id": 12,
       "price": "499.00",
       "title": "Custom Name Bracelet",
-      "img": "src/images/slider/u-3.png",
+      "img": "src/assets/slider/u-3.png",
       "additional": "See More",
       "addToBag": "Add To Bag",
       "isChecked": false
@@ -225,87 +225,96 @@
       "id": 1,
       "price": "200.00",
       "title": "Blue Mood",
-      "img": "src/images/board/blue.png"
+      "img": "src/assets/board/blue.png"
     },
     {
       "id": 2,
       "price": "200.00",
       "title": "Brown Mood",
-      "img": "src/images/board/brown.png"
+      "img": "src/assets/board/brown.png"
     },
     {
       "id": 3,
       "price": "200.00",
       "title": "Brown Mood",
-      "img": "src/images/board/brown.png"
+      "img": "src/assets/board/brown.png"
     },
     {
       "id": 4,
       "price": "200.00",
       "title": "White Mood",
-      "img": "src/images/board/desert.png"
+      "img": "src/assets/board/desert.png"
     },
     {
       "id": 5,
       "price": "200.00",
       "title": "Yellow Mood",
-      "img": "src/images/board/gold.png"
+      "img": "src/assets/board/gold.png"
     },
     {
       "id": 6,
       "price": "200.00",
       "title": "Black Mood",
-      "img": "src/images/board/carbon.png"
+      "img": "src/assets/board/carbon.png"
     },
     {
       "id": 7,
       "price": "200.00",
       "title": "Green Mood",
-      "img": "src/images/board/green.png"
+      "img": "src/assets/board/green.png"
     },
     {
       "id": 8,
       "price": "200.00",
       "title": "Red Mood",
-      "img": "src/images/board/red.png"
+      "img": "src/assets/board/red.png"
     },
     {
       "id": 9,
       "price": "200.00",
       "title": "Brown Mood",
-      "img": "src/images/board/brown.png"
+      "img": "src/assets/board/brown.png"
     },
     {
       "id": 10,
       "price": "200.00",
       "title": "Yellow Mood",
-      "img": "src/images/board/brown.png"
+      "img": "src/assets/board/brown.png"
     },
     {
       "id": 11,
       "price": "200.00",
       "title": "White Mood",
-      "img": "src/images/board/desert.png"
+      "img": "src/assets/board/desert.png"
     },
     {
       "id": 12,
       "price": "200.00",
       "title": "Yellow Mood",
-      "img": "src/images/board/gold.png"
+      "img": "src/assets/board/gold.png"
     },
     {
       "id": 13,
       "price": "200.00",
       "title": "Black Mood",
-      "img": "src/images/board/carbon.png"
+      "img": "src/assets/board/carbon.png"
     },
     {
       "id": 14,
       "price": "200.00",
       "title": "Green Mood",
-      "img": "src/images/board/green.png"
+      "img": "src/assets/board/green.png"
     }
   ],
-  "wishlist": [],
+  "wishlist": [
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/x.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 1
+    }
+  ],
   "bag": []
 }

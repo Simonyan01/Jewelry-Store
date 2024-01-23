@@ -1,8 +1,8 @@
-import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, switchToActive } from "../../../features/wishlist/WishListSlice"
-import { postToBagList } from "../../../features/bag/BagSlice"
+import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, switchToActive } from "features/wishlist/wishlistSlice"
 import WishlistPagination from "./pagination/Pagination"
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"
+import { postToBagList } from "features/bag/BagSlice"
 import { Box, Fade, Stack } from "@mui/material"
 import styles from "./wishlist.module.scss"
 import { useEffect } from "react"

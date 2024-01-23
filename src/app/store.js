@@ -1,9 +1,9 @@
-import collectionReducer from "../features/collections/CollectionSlice"
-import wishlistReducer from "../features/wishlist/WishListSlice"
-import headerReducer from "../features/header/HeaderSlice"
-import charmReducer from "../features/charms/CharmSlice"
-import boardReducer from "../features/board/BoardSlice"
-import bagReducer from "../features/bag/BagSlice"
+import collectionReducer from "features/collections/CollectionSlice"
+import wishlistReducer from "features/wishlist/wishlistSlice"
+import headerReducer from "features/header/HeaderSlice"
+import charmReducer from "features/charms/CharmSlice"
+import boardReducer from "features/board/BoardSlice"
+import bagReducer from "features/bag/BagSlice"
 import { configureStore } from "@reduxjs/toolkit"
 
 export const store = configureStore({

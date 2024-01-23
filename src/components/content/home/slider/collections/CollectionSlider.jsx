@@ -1,20 +1,21 @@
-import { selectCollections, switchToActive, seeMoreInfo, getCollections, switchToActiveHeart, postCollections } from "../../../../../features/collections/CollectionSlice";
-import { postToWishlist } from "../../../../../features/wishlist/WishListSlice";
+import { getCollections, postCollections, seeMoreInfo, selectCollections, switchToActive, switchToActiveHeart } from "features/collections/CollectionSlice";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
-import { getBeltBoard } from "../../../../../features/board/BoardSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { postToBagList } from "../../../../../features/bag/BagSlice";
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
+import { postToWishlist } from "features/wishlist/wishlistSlice";
+import { getBeltBoard } from "features/board/BoardSlice";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux";
+import { postToBagList } from "features/bag/BagSlice";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from "./collection.module.scss"
 import { useEffect, useRef } from "react";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css';
+
 
 const CollectionSlider = () => {
     const swiperRef = useRef()

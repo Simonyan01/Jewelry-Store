@@ -2,8 +2,11 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "jsx": "react",
-    "baseUrl": "./src",
+    "strict": true,
+    "moduleResolution": "classic",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
     "paths": {
       "components/*": ["components/*"],
       "features/*": ["features/*"],
@@ -11,6 +14,6 @@
       "routes/*": ["routes/*"]
     }
   },
-  "include": ["./*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

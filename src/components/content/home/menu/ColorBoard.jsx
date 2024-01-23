@@ -1,9 +1,9 @@
-import { changeBeltColour, getColorBoard, selectBoardState, switchToActive } from "../../../../features/board/BoardSlice.jsx"
 import { useDispatch, useSelector } from "react-redux"
 import ClearIcon from '@mui/icons-material/Clear';
 import styles from "./color-board.module.scss";
 import { Box } from "@mui/material";
 import { useEffect } from "react";
+import { changeBeltColour, getColorBoard, selectBoardState, switchToActive } from "features/board/BoardSlice";
 
 const ColorBoard = () => {
     const dispatch = useDispatch()
