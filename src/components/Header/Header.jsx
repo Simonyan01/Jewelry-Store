@@ -1,6 +1,5 @@
-import { changeLanguageType, selectHeaderState, toggleBar } from "../../features/header/HeaderSlice"
+import { changeLanguageType, selectHeaderState, switchToActive, toggleBar } from "features/header/HeaderSlice"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
-import { switchToActive } from "../../features/header/HeaderSlice"
 import { Box, Button, Menu, MenuItem, } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import { useTranslation } from "react-i18next"
@@ -43,15 +42,15 @@ const Header = () => {
                 {language} {!languageBar ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
             </Button>
             <Menu
-                color="black"
+                PaperProps={{ style: { backgroundColor: "#2F333A", color: "white" } }}
                 anchorEl={languageBar}
                 onClose={handleClose}
                 open={languageBar}
             >
                 {Object.keys(i18n.options.resources)
-                    .map((lng) => (
+                    .map((lng, i) => (
                         <MenuItem
-                            key={lng}
+                            key={i}
                             disabled={i18n.resolvedLanguage === lng}
                             onClick={() => handleLanguageChange(lng)}>
                             {lng.toUpperCase()}

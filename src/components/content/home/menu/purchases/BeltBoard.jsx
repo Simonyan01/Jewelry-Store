@@ -1,8 +1,8 @@
-import { changeBeltColour, deleteBeltBoardItem, getBeltBoard, selectBoardState, switchToActive } from "../../../../../features/board/BoardSlice";
+import { changeBeltColour, deleteBeltBoardItem, getBeltBoard, selectBoardState, switchToActive } from "features/board/BoardSlice";
 import { useDispatch, useSelector, } from "react-redux";
-import belt from "../../../../../images/board/belt.png"
 import RefreshIcon from '@mui/icons-material/Refresh';
 import styles from "./belt-board.module.scss"
+import belt from "assets/board/belt.png"
 import { Box } from "@mui/material"
 import { useEffect } from "react";
 

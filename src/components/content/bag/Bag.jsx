@@ -1,4 +1,4 @@
-import { decrement, deleteInBagList, getBagList, increment, selectBagState } from "../../../features/bag/BagSlice";
+import { decrement, deleteInBagList, getBagList, increment, selectBagState } from "features/bag/BagSlice";
 import { useDispatch, useSelector } from "react-redux";
 import ClearIcon from '@mui/icons-material/Clear';
 import { Box, Button } from "@mui/material";
@@ -34,7 +34,7 @@ const Bag = () => {
                                                 setTimeout(() => dispatch(getBagList()), 100);
                                             }}
                                             className={styles.trashIcon}
-                                            src="src/images/bag/trash.png"
+                                            src="src/assets/bag/trash.png"
                                             alt="trash image"
                                         />
                                         <img className={styles.bagImg} src={img} alt={title} />

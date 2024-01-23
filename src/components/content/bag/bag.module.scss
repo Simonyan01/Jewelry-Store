@@ -2,7 +2,7 @@
   @apply flex justify-center items-center min-h-full font-medium tracking-widest text-3xl text-slate-300 select-none ml-12;
 }
 .mainContainer {
-  @apply grid place-items-center bg-[url('src/images/bag/main.png')] bg-cover bg-center bg-gray-800 bg-no-repeat min-h-screen text-slate-200 w-full select-none relative;
+  @apply grid place-items-center bg-[url('src/assets/bag/main.png')] bg-cover bg-center bg-gray-800 bg-no-repeat min-h-screen text-slate-200 w-full select-none relative;
   .subContainer {
     @apply bg-[#3E4148] h-[450px] rounded-t-xl w-[900px] shadow-primaryBoxShadow overflow-x-hidden overflow-y-auto;
     .clearIcon {
