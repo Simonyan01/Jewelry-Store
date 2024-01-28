@@ -13,7 +13,11 @@ export const getBagList = createAsyncThunk(
     "bag/getBagList",
     async (_, thunkAPI) => {
         try {
-            const res = await axios.get(bagURL)
+            const res = await axios.get(bagURL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to get bag list")
@@ -27,7 +31,11 @@ export const postToBagList = createAsyncThunk(
     "bag/postBagList",
     async (req, thunkAPI) => {
         try {
-            const res = await axios.post(bagURL, req)
+            const res = await axios.post(bagURL, req, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to post bag list")

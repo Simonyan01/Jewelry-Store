@@ -14,7 +14,11 @@ export const getCollections = createAsyncThunk(
     "collections/getCollections",
     async (_, thunkAPI) => {
         try {
-            const res = await axios.get(collectionURL)
+            const res = await axios.get(collectionURL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
@@ -30,7 +34,11 @@ export const postCollections = createAsyncThunk(
     "collections/postCollections",
     async (req, thunkAPI) => {
         try {
-            const res = await axios.post(beltBoardURL, req)
+            const res = await axios.post(beltBoardURL, req, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(

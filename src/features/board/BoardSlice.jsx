@@ -14,7 +14,11 @@ export const getColorBoard = createAsyncThunk(
     "getColorBoard",
     async (_, thunkAPI) => {
         try {
-            const res = await axios.get(colourBoardURL)
+            const res = await axios.get(colourBoardURL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(
@@ -28,7 +32,11 @@ export const getBeltBoard = createAsyncThunk(
     "getBeltBoard",
     async (_, thunkAPI) => {
         try {
-            const res = await axios.get(beltBoardURL)
+            const res = await axios.get(beltBoardURL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to get belt board")

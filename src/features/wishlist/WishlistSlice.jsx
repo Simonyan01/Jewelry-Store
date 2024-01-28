@@ -16,7 +16,10 @@ export const getWishlist = createAsyncThunk(
             const res = await axios.get(wishlistURL, {
                 params: {
                     _page: page,
-                }
+                },
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
             })
             return res?.data
         } catch (err) {

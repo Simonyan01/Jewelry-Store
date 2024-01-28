@@ -35,8 +35,7 @@ const CharmSlider = () => {
                     <Box className={styles.container}>
                         <ArrowBackIosNewIcon
                             className={`${styles.arrowLeft} arrow-Left`}
-                            onClick={() => swiperRef.current &&
-                                swiperRef.current.swiper.slidePrev()}
+                            onClick={() => swiperRef.current && swiperRef.current.swiper.slidePrev()}
                         />
                         <Swiper
                             slidesPerView={6}
@@ -58,7 +57,7 @@ const CharmSlider = () => {
                                         ref={swiperRef}
                                         className={`${activeLink === id && styles.active}`}
                                     >
-                                        <Box className={styles.card}>
+                                        <Box className={styles.card}> 
                                             {isChecked ?
                                                 <FavoriteIcon
                                                     className={styles.favoriteIcon}
@@ -124,8 +123,7 @@ const CharmSlider = () => {
                         </Swiper>
                         <ArrowForwardIosIcon
                             className={`${styles.arrowRight} arrow-Right`}
-                            onClick={() => swiperRef.current &&
-                                swiperRef.current.swiper.slideNext()}
+                            onClick={() => swiperRef.current && swiperRef.current.swiper.slideNext()}
                         />
                     </Box>
             }
