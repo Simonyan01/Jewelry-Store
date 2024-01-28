@@ -35,8 +35,7 @@ const CollectionSlider = () => {
                     <Box className={styles.container}>
                         <ArrowBackIosNewIcon
                             className={`${styles.arrowLeft} arrow-left`}
-                            onClick={() => swiperRef.current &&
-                                swiperRef.current.swiper.slidePrev()}
+                            onClick={() => swiperRef.current && swiperRef.current.swiper.slidePrev()}
                         />
                         <Swiper
                             slidesPerView={6}
@@ -123,8 +122,7 @@ const CollectionSlider = () => {
                         </Swiper>
                         <ArrowForwardIosIcon
                             className={`${styles.arrowRight} arrow-right`}
-                            onClick={() => swiperRef.current &&
-                                swiperRef.current.swiper.slideNext()}
+                            onClick={() => swiperRef.current && swiperRef.current.swiper.slideNext()}
                         />
                     </Box>
             }

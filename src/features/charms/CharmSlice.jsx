@@ -14,7 +14,11 @@ export const getCharms = createAsyncThunk(
     "charms/getCharms",
     async (_, thunkAPI) => {
         try {
-            const res = await axios.get(charmURL)
+            const res = await axios.get(charmURL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to get charms")
@@ -28,7 +32,11 @@ export const postCharms = createAsyncThunk(
     "charms/postCharms",
     async (req, thunkAPI) => {
         try {
-            const res = await axios.post(beltBoardURL, req)
+            const res = await axios.post(beltBoardURL, req, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
             return res?.data
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message || "Failed to post charms")
