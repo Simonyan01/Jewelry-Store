@@ -6,13 +6,15 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    // "eslint-config-prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  "--ignorePatterns": ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "detect" } },
-  plugins: ["react-refresh"],
+  plugins: ["react", "react-refresh"],
   rules: {
+    "no-unused-vars": "warn",
+    "no-undef": "warn",
+    "react/jsx-no-undef": "warn",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },

@@ -1,14 +1,14 @@
 .container {
-  @apply select-none max-w-full bg-headerBg text-slate-200 flex justify-between items-center  pl-8 pr-3 h-[4.375rem];
+  @apply select-none max-w-full bg-headerBg text-slate-200 flex items-center px-4 justify-between h-[4.375rem];
   .nav {
-    @apply flex items-center relative tracking-wider;
+    @apply flex items-center gap-5 relative tracking-wider;
     .navItem {
-      @apply flex items-center text-slate-200 gap-4 px-6;
+      @apply flex items-center text-slate-200 gap-4 px-3;
       &:nth-child(1) {
         @apply font-bold text-xl font-primaryFont tracking-widest select-none outline-none;
       }
       &::after {
-        @apply content-[""] absolute top-10 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-28 transition-all;
+        @apply content-[""] absolute top-10 w-[0%] h-[5px] rounded-lg bg-primaryColor hover:w-24 transition-all;
       }
     }
   }

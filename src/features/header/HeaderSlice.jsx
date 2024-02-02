@@ -7,7 +7,7 @@ export const selectHeaderState = state => state.header
 const initialState = {
     activeLink: null,
     languageBar: false,
-    language: "EN"
+    language: localStorage.getItem("language") || "EN",
 }
 
 const headerSlice = createSlice({
@@ -22,6 +22,7 @@ const headerSlice = createSlice({
         },
         changeLanguageType: (state, action) => {
             state.language = action.payload
+            localStorage.setItem("language", action.payload);
         },
     }
 })
