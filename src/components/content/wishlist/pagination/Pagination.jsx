@@ -1,4 +1,4 @@
-import { selectWishlistState, setCurrentPage } from "features/wishlist/wishlistSlice"
+import { selectWishlistState, setCurrentPage } from "features/wishlist/WishlistSlice"
 import { useDispatch, useSelector } from "react-redux"
 import { Box, Pagination } from "@mui/material"
 import styles from "../wishlist.module.scss"

@@ -1,5 +1,5 @@
 import collectionReducer from "features/collections/CollectionSlice"
-import wishlistReducer from "features/wishlist/wishlistSlice"
+import wishlistReducer from "features/wishlist/WishlistSlice"
 import headerReducer from "features/header/HeaderSlice"
 import charmReducer from "features/charms/CharmSlice"
 import boardReducer from "features/board/BoardSlice"

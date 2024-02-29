@@ -1,4 +1,4 @@
-import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, switchToActive } from "features/wishlist/wishlistSlice"
+import { deleteInWishlist, getWishlist, seeMoreInfo, selectWishlistState, switchToActive } from "features/wishlist/WishlistSlice"
 import WishlistPagination from "./pagination/Pagination"
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from "react-redux"

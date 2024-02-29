@@ -314,6 +314,62 @@
       "additional": "See More",
       "addToBag": "Add To Bag",
       "id": 1
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/x.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 2
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/detail-13.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 3
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/w.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 4
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/x.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 5
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/x.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 6
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/detail-13.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 7
+    },
+    {
+      "price": "499.00",
+      "title": "Custom Name Bracelet",
+      "img": "src/assets/slider/u-3.png",
+      "additional": "See More",
+      "addToBag": "Add To Bag",
+      "id": 8
     }
   ],
   "bag": []
