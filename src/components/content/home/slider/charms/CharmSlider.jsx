@@ -3,7 +3,7 @@ import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Box, CircularProgress, Fade, Stack } from "@mui/material"
-import { postToWishlist } from "features/wishlist/wishlistSlice";
+import { postToWishlist } from "features/wishlist/WishlistSlice";
 import { getBeltBoard } from "features/board/BoardSlice";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Navigation, Pagination } from 'swiper/modules';
